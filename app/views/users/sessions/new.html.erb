@@ -1,17 +1,24 @@
 <h2>Sign in</h2>
 
+<div class="row">
+<div class="span4">
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :login %><br />
-  <%= f.text_field :login %></div>
+  <%= f.label :login, :class => "label label-info"%>
+  <%= f.text_field :login, :class => "input_form" %><br />
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <%= f.label :password, :class => "label label-info" %>
+  <%= f.password_field :password, :class => "input_form" %><br />
 
   <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+    <%= f.check_box :remember_me %>
+    <%= f.label :remember_me, :class => "label label-info remember" %><br />
+     
   <% end -%>
-
-  <div><%= f.submit "Sign in" %></div>
+  <br />
+  <%= f.submit "Sign in", :class => "btn btn-min btn-info" %>
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>
+</div>
+<div class="span8"><%= image_tag("robot.png") %></div>
+</div>
