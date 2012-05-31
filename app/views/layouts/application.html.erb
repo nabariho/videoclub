@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 <html>
+<!DOCTYPE html>
 <head>
   <title>Videoclub</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -7,8 +7,41 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class ="container">
+  <div id= "cabeza" class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
 
-<%= yield %>
+        <form class="navbar-search">
+          <input type="text" class="search-query" placeholder="Search">
+        </form>
+    	  <ul id="log" class="nav">
+    		  <%=render 'users/menu/login_items'%>
+					<%=render 'users/menu/registration_items'%>
+        </ul>    
+      </div>
+    </div>		
+  </div>
+  
+  <div id="cuerpo">
+	  <%= yield %>
+  </div>
+
+	<div id="pie" class="navbar navbar-fixed-bottom">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+    	  <ul id="nav_pie" class="nav" >
+    		  <li><a href="#">About</a></li>
+    			<li><a href="#">Contact</a></li>
+    			<li><a href="#">Blog</a></li>
+    		</ul>    
+      </div>
+    </div>		
+  </div>
+</div>
+
+
+
 
 </body>
 </html>
