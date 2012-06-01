@@ -16,7 +16,6 @@
 <% @films.each do |film| %>
   <tr>
     <td><%= film.title %></td>
-    <td><%= film.year %></td>
     <td><%= film.time %></td>
     <td><%= film.rental_price %></td>
     <td><%= film.buy_price %></td>

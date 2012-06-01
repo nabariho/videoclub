@@ -3,6 +3,10 @@
 <div class="span3">
   <p><%= image_tag @film.poster.url %></p>
   <p>
+    <b>Year:</b>
+    <%= @film.year %>
+  </p>
+  <p>
     <b>Time:</b>
     <%= @film.time %>
   </p>
@@ -15,18 +19,25 @@
   <h1>
     <%= @film.title %>
   </h1>
-<!--   <p><%= video_tag @film.movie.url %></p> -->
+<p><%= video_tag @film.movie.url, :size => "560x400", :controls => true  %></p>
 </div>
 <div class="span2">
+<p>
+  <b>Buy price:</b>
+  <%= @film.buy_price %>
+</p>
+
 <p>
   <b>Rental price:</b>
   <%= @film.rental_price %>
 </p>
 
 <p>
-  <b>Buy price:</b>
-  <%= @film.buy_price %>
+  <b>:</b>
+  <%= @film.rental_price %>
 </p>
+
+
 </div>
 
 </div>

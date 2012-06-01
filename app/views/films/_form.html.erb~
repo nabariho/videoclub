@@ -35,6 +35,10 @@
     <%= f.label :poster %><br />
     <%= f.file_field :poster %>
   </div>
+  <div class="field">
+    <%= f.label :movie %><br />
+    <%= f.file_field :movie %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
