@@ -1,0 +1,36 @@
+<div class="row">
+<p id="notice"><%= notice %></p>
+<div class="span3">
+  <p><%= image_tag @film.poster.url %></p>
+  <p>
+    <b>Time:</b>
+    <%= @film.time %>
+  </p>
+  <p>
+    <b>Sinopsis:</b>
+    <%= @film.sinopsis %>
+  </p>
+</div>
+<div class="span6">
+  <h1>
+    <%= @film.title %>
+  </h1>
+<!--   <p><%= video_tag @film.movie.url %></p> -->
+</div>
+<div class="span2">
+<p>
+  <b>Rental price:</b>
+  <%= @film.rental_price %>
+</p>
+
+<p>
+  <b>Buy price:</b>
+  <%= @film.buy_price %>
+</p>
+</div>
+
+</div>
+<!-- <div>
+<%= link_to 'Edit', edit_film_path(@film) %> |
+<%= link_to 'Back', films_path %>
+</div> -->
