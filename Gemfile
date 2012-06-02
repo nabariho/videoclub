@@ -8,12 +8,7 @@ gem 'rails', '3.2.3'
 gem 'sqlite3'
 #user authorizarion
 gem "devise", "~> 2.1.0"
-#CSS
-gem "compass"   	
-gem "twitter-bootstrap-rails", "~> 2.0.8"
-gem 'bootstrap-sass', '2.0.0'
-gem 'compass_twitter_bootstrap'
-gem 'compass-rails'
+#
 
 #Haml
 gem "haml-rails"
@@ -21,7 +16,9 @@ gem "haml-rails"
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
+  gem "compass"   	
   gem 'coffee-rails', '~> 3.2.1'
+  gem 'bootstrap-generators', '~> 2.0'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platform => :ruby
