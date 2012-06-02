@@ -1,4 +1,4 @@
-/*
+g/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -28,4 +28,19 @@
 #log{
   position: relative;
   float:right;
+}
+.remember{
+  width: 93%;
+  float: right;
+}
+
+#logotipo{
+  float:left;
+  margin-right: 20px;
+}
+
+.user_name{
+  margin-top: 15px;
+  margin-right: 10px;
+  font-size: 18px;
 }
