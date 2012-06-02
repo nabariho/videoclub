@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+  <li class="user_name">
+  <%= current_user.email %>
+  </li>
+<% else %>
+  <li class="user_name">
+  Anonimo
+  </li>
+<% end %>

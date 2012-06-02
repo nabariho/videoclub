@@ -11,11 +11,15 @@
   <div id= "cabeza" class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container-fluid">
-
+        <div id="logotipo">
+          <%= image_tag("logo3.png") %>
+          <%= image_tag("logo.png") %>
+        </div>
         <form class="navbar-search">
           <input type="text" class="search-query" placeholder="Search">
         </form>
-    	  <ul id="log" class="nav">
+        <ul id="log" class="nav">
+          <%= render 'users/menu/user_name' %>
     		  <%=render 'users/menu/login_items'%>
 					<%=render 'users/menu/registration_items'%>
         </ul>    
