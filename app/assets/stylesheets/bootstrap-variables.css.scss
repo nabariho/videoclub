@@ -34,7 +34,7 @@ $purple:                #7a43b6 !default;
 $baseFontSize:          13px !default;
 $baseFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $baseLineHeight:        18px !default;
-$textColor:             $grayDark !default;
+$textColor:             $blue !default;
 
 // Buttons
 $primaryButtonBackground:    $linkColor !default;
@@ -63,8 +63,8 @@ $navbarBackground:                $grayDarker !default;
 $navbarBackgroundHighlight:       $grayDark !default;
 
 $navbarText:                      $grayLight !default;
-$navbarLinkColor:                 $grayLight !default;
-$navbarLinkColorHover:            $white !default;
+$navbarLinkColor:                 $white !default;
+$navbarLinkColorHover:            $blue !default;
 
 // Form states and alerts
 $warningText:             #c09853 !default;
@@ -82,7 +82,6 @@ $successBorder:           darken(adjust-hue($successBackground, -10), 5%) !defau
 $infoText:                #3a87ad !default;
 $infoBackground:          #d9edf7 !default;
 $infoBorder:              darken(adjust-hue($infoBackground, -10), 7%) !default;
-
 
 
 // GRID

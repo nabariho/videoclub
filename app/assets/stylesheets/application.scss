@@ -12,6 +12,12 @@
  *= require_tree .
 */
 
+.navbar-fixed-bottom{
+  position: fixed;
+  bottom: -18;
+  right: -2;
+  left: -2;
+}
 
 #form{
   width: 25%;
@@ -22,6 +28,9 @@
 }
 .search-query{
   height: 36px;
+  width: 350px;
+  margin-top: 4px;
+  margin-left: 48%;
 }
 #nav_pie{
   margin-left: 45%;
