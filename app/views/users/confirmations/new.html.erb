@@ -1,12 +1,18 @@
 <h2>Resend confirmation instructions</h2>
 
+<div class="row">
+<div class="span4">
 <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+  <%= f.label :email, :class => "label label-info" %>
+  <%= f.email_field :email, :class => "input_form" %><br />
 
-  <div><%= f.submit "Resend confirmation instructions" %></div>
+  <%= f.submit "Resend confirmation instructions", :class => "btn btn-min btn-info" %>
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>
+
+</div>
+<div class="span8"><%= image_tag("robot_sing_up.png") %></div>
+</div>
