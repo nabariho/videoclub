@@ -1,13 +1,13 @@
 <div class="row">
 <p id="notice"><%= notice %></p>
-<div class="span3">
+<div class="span3" id="MovieInfo">
   <p><%= image_tag @film.poster.url %></p>
   <p>
-    <b>Year:</b>
+    <b>Año:</b>
     <%= @film.year %>
   </p>
   <p>
-    <b>Time:</b>
+    <b>Duración:</b>
     <%= @film.time %>
   </p>
   <p>
@@ -15,13 +15,13 @@
     <%= @film.sinopsis %>
   </p>
 </div>
-<div class="span6">
+<div class="span6" id="MovieContainer">
   <h1>
     <%= @film.title %>
   </h1>
-<p><%= video_tag @film.movie.url, :size => "560x400", :controls => true  %></p>
+  <p><%= video_tag @film.movie.url, :size => "560x400", :controls => true  %></p>
 </div>
-<div class="span2">
+<div class="span2" id="GetMovie">
 <p>
   <b>Buy price:</b>
   <%= @film.buy_price %>
@@ -36,7 +36,6 @@
   <b>Ver con Anuncios: <br/> Gratis</b>
 
 </p>
-
 
 </div>
 

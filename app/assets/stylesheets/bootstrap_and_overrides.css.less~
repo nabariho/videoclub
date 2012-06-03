@@ -1,10 +1,7 @@
 @import "twitter/bootstrap/bootstrap";
-<<<<<<< HEAD
-body { padding-top: 60px; }
 
-=======
 body { padding-top: 55px; }
->>>>>>> users
+
 @import "twitter/bootstrap/responsive";
 
 // Set the correct sprite paths
@@ -29,18 +26,11 @@ body { padding-top: 55px; }
 // If you'd like to override bootstrap's own variables, you can do so here as well
 // See http://twitter.github.com/bootstrap/less.html for their names and documentation
 //
-<<<<<<< HEAD
 // Example:
-// @linkColor: #ff0000;
-=======
-// Example: 
 @linkColor: @white;
 @navbarBackground: #D8D8D8;
 @navbarBackgroundHighlight: #BDBDBD;
 @bodyBackground: #424242;
-@textColor: @white;
+@textColor: @green;
 @navbarText: @white;
 @navbarLinkColor: @white;
-
-
->>>>>>> users

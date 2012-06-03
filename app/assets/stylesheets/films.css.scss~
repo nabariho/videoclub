@@ -1,16 +1,24 @@
 // Place all the styles related to the Films controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.Panel_der,.Panel_izq{
+.Panel_izq{
 	border:5px solid #FFA611;
 	position:relative;
 	height: 99%;
 	width:	17%;
 	padding: 0px;
 }
-.Panel_der{
-	float:right;
+#Panel_der{
+	padding-up: 29px;
 }
 .menu_izq{
 	float:left;
+}
+.contenido{
+	height: 99%;
+	width:	40%;
+	position:relative;
+	border:5px solid #2B7336;
+	float:left;
+	padding: 0px;
 }
