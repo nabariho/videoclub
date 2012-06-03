@@ -5,7 +5,7 @@
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <%= f.label :login, :class => "label label-info" %>
+  <%= f.label "put your login name", :class => "label label-info" %>
   <%= f.text_field :login, :class => "input_form"%><br />
 
   <%= f.submit "Send me reset password instructions", :class => "btn btn-min btn-info" %><br />
