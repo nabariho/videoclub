@@ -6,7 +6,18 @@ gem 'rails', '3.2.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'twitter-bootstrap-rails', "~> 2.0.8"
+
+#user authorizarion
+gem "devise", "~> 2.1.0"
+#CSS
+gem "compass"
+gem "twitter-bootstrap-rails", "~> 2.0.8"
+gem 'bootstrap-sass', '2.0.0'
+gem 'compass_twitter_bootstrap'
+gem 'compass-rails'
+
+#Haml
+gem "haml-rails"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -25,13 +36,13 @@ gem 'jquery-rails'
 gem "paperclip", "~> 3.0"
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem "unicorn", "~> 4.3.1"
 
 # Deploy with Capistrano
 # gem 'capistrano'
