@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class ="container">
-  <div id= "cabeza" class="navbar navbar-fixed-top">
+  <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container-fluid">
         <div id="logotipo">
@@ -18,7 +18,7 @@
         <form class="navbar-search">
           <input type="text" class="search-query" placeholder="Buscar Peliculas">
         </form>
-        <ul id="log">  
+        <ul id="login">  
     		  <%=render 'users/menu/login_items'%>
 					<%=render 'users/menu/registration_items'%>
         </ul>
@@ -31,7 +31,7 @@
 	  <%= yield %>
   </div>
 
-	<div id="pie" class="navbar navbar-fixed-bottom">
+	<div class="navbar navbar-fixed-bottom">
     <div class="navbar-inner">
       <div class="container-fluid">
     	  <ul id="nav_pie" class="nav" >
