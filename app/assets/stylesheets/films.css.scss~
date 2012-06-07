@@ -74,8 +74,6 @@ img{
 	padding: 0px;
 <<<<<<< HEAD
 } */
-=======
-}
 
 .info{
   padding-top: 10%;
@@ -92,4 +90,3 @@ p.button {
   padding-right: 18px; /* sliding doors padding */
   text-decoration: none;
 }
->>>>>>> e0a4b53e2da8e751dedbcbcaf44d4a6d899919e7
