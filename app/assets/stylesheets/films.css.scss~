@@ -44,7 +44,7 @@ img{
 }
 
 .Comments {
-	background-color:White;
+	background-color:Grey;
 	padding:10px;
 }
 
@@ -72,4 +72,24 @@ img{
 	border:5px solid #2B7336;
 	float:left;
 	padding: 0px;
+<<<<<<< HEAD
 } */
+=======
+}
+
+.info{
+  padding-top: 10%;
+}
+
+p.button {
+  background: url('boton.png') no-repeat scroll top right;
+  color: #444;
+  display: block;
+  float: left;
+  font: normal 12px arial, sans-serif;
+  height: 24px;
+  margin-right: 6px;
+  padding-right: 18px; /* sliding doors padding */
+  text-decoration: none;
+}
+>>>>>>> e0a4b53e2da8e751dedbcbcaf44d4a6d899919e7

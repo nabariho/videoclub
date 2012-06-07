@@ -11,6 +11,8 @@
  *= require_self
  *= require_tree .
 */
+<<<<<<< HEAD:app/assets/stylesheets/application.scss
+
 #form{
   width: 25%;
 }
@@ -32,4 +34,6 @@
   width: 93%;
   float: right;
 }
+=======
 @import "films";
+>>>>>>> e0a4b53e2da8e751dedbcbcaf44d4a6d899919e7:app/assets/stylesheets/application.css
