@@ -1,41 +1,60 @@
 <div class="row">
 <p id="notice"><%= notice %></p>
 <div class="span3" id="MovieInfo">
-  <p><%= image_tag @film.poster.url %></p>
-  <p>
-    <b>Año:</b>
-    <%= @film.year %>
-  </p>
-  <p>
-    <b>Duración:</b>
-    <%= @film.time %>
-  </p>
-  <p>
-    <b>Sinopsis:</b>
-    <%= @film.sinopsis %>
-  </p>
+  <div class="ImageContainer"><%= image_tag @film.poster.url %></div>
+  <table class="table" id="TableInfoMovie">
+    <body>
+      <tr>
+	<td>
+          Año:
+	</td>
+	<td>
+          <%= @film.year %>
+	</td>
+	</tr>
+      <tr>
+	<td>
+	    Duración:
+	</td>
+	<td>
+	    <%= @film.time %>
+	</td>
+      </tr>
+      <tr>
+ 	<td colspan="2">
+	Sinopsis: <br/>
+
+	<%= @film.sinopsis %>
+	</td>
+      </tr>
+    <body>
+  </table>
 </div>
 <div class="span6" id="MovieContainer">
   <h1>
     <%= @film.title %>
   </h1>
   <p><%= video_tag @film.movie.url, :size => "560x400", :controls => true  %></p>
+  <div class="row Comments"> Aquí van los comentarios!!! </div>
 </div>
 <div class="span2" id="GetMovie">
-<p>
-  <b>Buy price:</b>
-  <%= @film.buy_price %>
-</p>
 
-<p>
-  <b>Rental price:</b>
-  <%= @film.rental_price %>
-</p>
+  <!-- <div class= "colorGrey">
+    <button class="btn btn-large btn-danger btnPurchase">Comprar: <%= @film.buy_price %>€</button>
 
-<p>
-  <b>Ver con Anuncios: <br/> Gratis</b>
+  </div> -->
+  <button class="btn btn-large btn-danger btnPurchase">Comprar: <%= @film.buy_price %>€</button>
+  <button class="btn btn-large btn-danger btnPurchase">Alquilar: <%= @film.rental_price %>€</button>
+  <button class="btn btn-large btn-danger btnPurchase">Ver con Anuncios: Gratis</button>
 
-</p>
+  <!-- <div class= "colorGrey">
+    <span><button class="btn btn-large btn-danger btnPurchase">Alquilar</button></span>
+    <span><%= @film.rental_price %>€</span>
+  </div> -->
+  <!-- <div class= "colorGrey">
+    <button class="btn btn-large btn-danger btnPurchase">Ver con Anuncios</button>
+    Gratis
+  </div> -->
 
 </div>
 
