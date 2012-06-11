@@ -1,0 +1,98 @@
+// Color de texto botones
+@mixin text-buttom{
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color:white;
+}
+
+$color1: #5BC0DE;
+$color2: #2F96B4;
+
+// GRADIENTE DEL BACKGROUND
+@mixin gradient{
+  height: 100%;
+  width: 100%;
+  @include linear-gradient(top,#D30303,#000000);
+}
+
+//NAVBAR
+.navbar-fixed-bottom{
+  position: fixed;
+  bottom: -18;
+  right: -2;
+  left: -2;
+}
+
+#nav_pie{
+  margin-left: 45%;
+}
+
+// FORM
+#form{
+  width: 25%;
+}
+.input_form{
+  height: 25px;
+  width:100%;
+}
+
+.remember{
+  width: 91%;
+  float: right;
+}
+
+.label{
+  text-transform:uppercase;
+}
+
+// MENU TOP
+#logotipo{
+  float:left;
+  margin-top: 6px;
+  margin-right: 20px;
+}
+
+.search-query{
+  height: 36px;
+  width: 350px;
+  margin-top: 6px;
+  margin-left: 48%;
+}
+
+#login{
+  margin-top: 3px;
+  float:right;
+  list-style-type: none;
+  li a{
+    width: 60px;
+  }
+}
+
+.user_name{ 
+  float: right;
+  margin-top: 20px;
+  margin-right: 10px;
+  font-size: 18px;
+  color: white;
+}
+body{
+  @include gradient;
+}
+
+h2{
+  color: #fff;
+}
+
+// BOTONES
+.btn-blue{
+  @include text-buttom;
+  @include linear-gradient(top, $color1, $color2);
+  border-color: $color2 $color2 #1F6377;
+  &:hover{
+    @include text-buttom;
+    background: -moz-linear-gradient(top,$color2,$color1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color2', endColorstr='$color1');
+    background: -webkit-gradient(linear, left top, left bottom, from($color2), to($color1));
+  }
+}
+
+

@@ -1,4 +1,5 @@
 @import "bootstrap-variables";
+@import "scss/bootstrap";
 
 body {
   padding-top: $navbarHeight + 40px;
@@ -13,16 +14,4 @@ body {
   a.btn + a.btn {
     margin-right: 8px;
   }
-}
-
-@import "scss/bootstrap";
-@import "home";
-body{
-  background: -webkit-linear-gradient(#D30303,black);
-  background: -moz-linear-gradient(#D30303,black);
-  background: -o-linear-gradient(#D30303,black);
-}
-
-h2{
-  color: #fff;
 }
