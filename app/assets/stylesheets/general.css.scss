@@ -10,6 +10,7 @@ $color2: #2F96B4;
 // GRADIENTE DEL BACKGROUND
 @mixin gradient{
   @include linear-gradient(top,#D30303,#000000);
+  background: -moz-linear-gradient(top, green, yellow);
 }
 
 //NAVBAR
