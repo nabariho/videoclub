@@ -9,8 +9,12 @@
           %li= msg
 
   .control-group
-    = f.label :string, :class => 'control-label'
+    = f.label :name, :class => 'control-label'
     .controls
-      = f.text_field :string, :class => 'input-xxlarge'
+      = f.text_field :name, :class => 'input-xxlarge'
+  .control-group
+    = f.label :description, :class => 'control-label'
+    .controls
+      = f.text_area :description, :class => 'input-xxlarge'
   .actions
     = f.submit :class => 'btn btn-primary'
