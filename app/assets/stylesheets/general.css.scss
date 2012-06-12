@@ -9,8 +9,6 @@ $color2: #2F96B4;
 
 // GRADIENTE DEL BACKGROUND
 @mixin gradient{
-  height: 100%;
-  width: 100%;
   @include linear-gradient(top,#D30303,#000000);
 }
 
