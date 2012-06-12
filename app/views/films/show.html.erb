@@ -1,0 +1,47 @@
+<div class="row">
+<p id="notice"><%= notice %></p>
+<div class="span3" id="MovieInfo">
+  <div class="ImageContainer"><%= image_tag @film.poster.url %></div>
+  <div class="informacion" id="TableInfoMovie">  
+    <ul>
+      <li> Año: <%= @film.year %></li>
+      <li> Duración: <%= @film.time %> minutos</li>
+      <li> Sinopsis:</li>
+      <pre><%= @film.sinopsis %></pre>
+    </ul>
+  </div>
+</div>
+<div class="span7" id="MovieContainer">
+  <h1 id="titulo_pelicula">
+    <%= @film.title %>
+  </h1>
+  <p><%= video_tag @film.movie.url, :size => "520x400", :controls => true  %></p>
+  <div class="row Comments"> Aquí van los comentarios!!! </div>
+</div>
+
+<div id="GetMovie">
+
+  <!-- <div class= "colorGrey">
+    <button class="btn btn-large btn-danger btnPurchase">Comprar: <%= @film.buy_price %>€</button>
+
+  </div> -->
+  <button class="btn btn-large btn-danger btnPurchase">Comprar: <%= @film.buy_price %>€</button>
+  <button class="btn btn-large btn-danger btnPurchase">Alquilar: <%= @film.rental_price %>€</button>
+  <button class="btn btn-large btn-danger btnPurchase">Ver con Anuncios: Gratis</button>
+
+  <!-- <div class= "colorGrey">
+    <span><button class="btn btn-large btn-danger btnPurchase">Alquilar</button></span>
+    <span><%= @film.rental_price %>€</span>
+  </div> -->
+  <!-- <div class= "colorGrey">
+    <button class="btn btn-large btn-danger btnPurchase">Ver con Anuncios</button>
+    Gratis
+  </div> -->
+
+</div>
+
+</div>
+<!-- <div>
+<%= link_to 'Edit', edit_film_path(@film) %> |
+<%= link_to 'Back', films_path %>
+</div> -->

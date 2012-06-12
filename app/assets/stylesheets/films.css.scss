@@ -1,0 +1,90 @@
+// Place all the styles related to the Films controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+pre{
+  font-size: 10px;
+  text-align: left;
+  color: white;
+  background: black;
+}
+
+#titulo_pelicula{
+  width: 515px;
+  margin-bottom: 5px;
+  padding-left: 5px;
+  color: white;
+  @include linear-gradient(top, #333, #222);
+  border-radius: 5px;
+}
+
+.colorGrey{
+	background-color:Grey;
+	border-radius: 5px;
+}
+
+.ImageContainer{
+	width:210px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.informacion li{
+  list-style-type: none;
+  padding-top: 5px;
+}
+
+
+img{
+	border-radius:5px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#GetMovie{
+        float: right;
+        width:160px;
+	margin-top:10%;
+	border-radius: 4px;
+	background-color:Grey;
+
+}
+
+#MovieInfo{
+	border-radius: 4px;
+	background-color:Black;
+        margin-bottom:60px;
+
+}
+
+.btnPurchase{
+	height:55px;
+	width:140px;
+	margin:8px;
+}
+
+.Comments {
+        color: white;
+        width:500px;
+        margin-left:0px;
+	@include linear-gradient(top, #333, #222);
+        border-radius: 5px;
+	padding:10px;
+}
+
+.info{
+  padding-top: 10%;
+}
+
+p.button {
+  background: url('boton.png') no-repeat scroll top right;
+  color: #444;
+  display: block;
+  float: left;
+  font: normal 12px arial, sans-serif;
+  height: 24px;
+  margin-right: 6px;
+  padding-right: 18px; /* sliding doors padding */
+  text-decoration: none;
+}

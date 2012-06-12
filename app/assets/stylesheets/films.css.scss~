@@ -1,0 +1,92 @@
+// Place all the styles related to the Films controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.colorGrey{
+	background-color:Grey;
+	border-radius: 5px;
+}
+
+.ImageContainer{
+	width:210px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.TableInfoMovie{
+	border:0px;
+}
+
+
+img{
+	border-radius:5px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#GetMovie{
+	margin-top:10%;
+	border-radius: 4px;
+	background-color:Grey;
+}
+
+#MovieInfo{
+	border-radius: 4px;
+	background-color:Black;
+
+}
+
+.btnPurchase{
+	height:55px;
+	width:150px;
+	margin:8px;
+}
+
+.Comments {
+	background-color:Grey;
+	padding:10px;
+}
+
+
+
+
+/*
+.Panel_izq{
+	border:5px solid #FFA611;
+	position:relative;
+	height: 99%;
+	width:	17%;
+	padding: 0px;
+}
+#Panel_der{
+	padding: 29px;
+}
+.menu_izq{
+	float:left;
+}
+.contenido{
+	height: 99%;
+	width:	40%;
+	position:relative;
+	border:5px solid #2B7336;
+	float:left;
+	padding: 0px;
+<<<<<<< HEAD
+} */
+
+.info{
+  padding-top: 10%;
+}
+
+p.button {
+  background: url('boton.png') no-repeat scroll top right;
+  color: #444;
+  display: block;
+  float: left;
+  font: normal 12px arial, sans-serif;
+  height: 24px;
+  margin-right: 6px;
+  padding-right: 18px; /* sliding doors padding */
+  text-decoration: none;
+}

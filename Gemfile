@@ -6,12 +6,13 @@ gem 'rails', '3.2.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+
 #user authorizarion
 gem "devise", "~> 2.1.0"
-#
 
 #Haml
 gem "haml-rails"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -19,14 +20,14 @@ group :assets do
   gem 'bourbon'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'bootstrap-generators'
-
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platform => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-rails'
+
+gem "paperclip", "~> 3.0"
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'

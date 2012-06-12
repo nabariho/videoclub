@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  time: 1
+  rental_price: 1.5
+  buy_price: 1.5
+  sinopsis: MyText
+
+two:
+  title: MyString
+  time: 1
+  rental_price: 1.5
+  buy_price: 1.5
+  sinopsis: MyText
