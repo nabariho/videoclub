@@ -31,7 +31,8 @@ ActiveRecord::Schema.define(:version => 20120531173108) do
     t.integer  "movie_file_size"
     t.datetime "movie_updated_at"
     t.integer  "year"
-
+	
+ end
   create_table "groups", :force => true do |t|
     t.string   "name"
     t.text     "description"
@@ -42,7 +43,6 @@ ActiveRecord::Schema.define(:version => 20120531173108) do
   create_table "groups_users", :id => false, :force => true do |t|
     t.integer "user_id"
     t.integer "group_id"
-
   end
 
   create_table "models", :force => true do |t|
