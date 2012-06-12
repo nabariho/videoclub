@@ -1,0 +1,14 @@
+.page-header
+  = link_to groups_path, :class => 'btn' do
+    %i.icon-list-alt
+    Back
+  = link_to edit_group_path(@group), :class => 'btn btn-primary' do
+    %i.icon-pencil.icon-white
+    Edit
+  %h1 Listing groups
+
+%dl
+  %dt Name:
+  %dd= @group.name
+  %dt Description:
+  %dd= @group.description
