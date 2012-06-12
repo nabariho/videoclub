@@ -1,6 +1,22 @@
 // Place all the styles related to the Films controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+pre{
+  font-size: 10px;
+  text-align: left;
+  color: white;
+  background: black;
+}
+
+#titulo_pelicula{
+  width: 515px;
+  margin-bottom: 5px;
+  padding-left: 5px;
+  color: white;
+  @include linear-gradient(top, #333, #222);
+  border-radius: 5px;
+}
+
 .colorGrey{
 	background-color:Grey;
 	border-radius: 5px;
@@ -14,8 +30,9 @@
 	margin-top: 10px;
 }
 
-.TableInfoMovie{
-	border:0px;
+.informacion li{
+  list-style-type: none;
+  padding-top: 5px;
 }
 
 
@@ -26,54 +43,35 @@ img{
 }
 
 #GetMovie{
+        float: right;
+        width:160px;
 	margin-top:10%;
 	border-radius: 4px;
 	background-color:Grey;
+
 }
 
 #MovieInfo{
 	border-radius: 4px;
 	background-color:Black;
+        margin-bottom:60px;
 
 }
 
 .btnPurchase{
 	height:55px;
-	width:150px;
+	width:140px;
 	margin:8px;
 }
 
 .Comments {
-	background-color:Grey;
+        color: white;
+        width:500px;
+        margin-left:0px;
+	@include linear-gradient(top, #333, #222);
+        border-radius: 5px;
 	padding:10px;
 }
-
-
-
-
-/*
-.Panel_izq{
-	border:5px solid #FFA611;
-	position:relative;
-	height: 99%;
-	width:	17%;
-	padding: 0px;
-}
-#Panel_der{
-	padding: 29px;
-}
-.menu_izq{
-	float:left;
-}
-.contenido{
-	height: 99%;
-	width:	40%;
-	position:relative;
-	border:5px solid #2B7336;
-	float:left;
-	padding: 0px;
-
-} */
 
 .info{
   padding-top: 10%;

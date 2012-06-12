@@ -2,43 +2,24 @@
 <p id="notice"><%= notice %></p>
 <div class="span3" id="MovieInfo">
   <div class="ImageContainer"><%= image_tag @film.poster.url %></div>
-  <table class="table" id="TableInfoMovie">
-    <body>
-      <tr>
-	<td>
-          Año:
-	</td>
-	<td>
-          <%= @film.year %>
-	</td>
-	</tr>
-      <tr>
-	<td>
-	    Duración:
-	</td>
-	<td>
-	    <%= @film.time %>
-	</td>
-      </tr>
-      <tr>
- 	<td colspan="2">
-	Sinopsis: <br/>
-
-	<%= @film.sinopsis %>
-	</td>
-      </tr>
-    <body>
-  </table>
+  <div class="informacion" id="TableInfoMovie">  
+    <ul>
+      <li> Año: <%= @film.year %></li>
+      <li> Duración: <%= @film.time %> minutos</li>
+      <li> Sinopsis:</li>
+      <pre><%= @film.sinopsis %></pre>
+    </ul>
+  </div>
 </div>
-<div class="span6" id="MovieContainer">
-  <h1>
+<div class="span7" id="MovieContainer">
+  <h1 id="titulo_pelicula">
     <%= @film.title %>
   </h1>
-  <p><%= video_tag @film.movie.url, :size => "560x400", :controls => true  %></p>
+  <p><%= video_tag @film.movie.url, :size => "520x400", :controls => true  %></p>
   <div class="row Comments"> Aquí van los comentarios!!! </div>
 </div>
 
-<div class="span2" id="GetMovie">
+<div id="GetMovie">
 
   <!-- <div class= "colorGrey">
     <button class="btn btn-large btn-danger btnPurchase">Comprar: <%= @film.buy_price %>€</button>

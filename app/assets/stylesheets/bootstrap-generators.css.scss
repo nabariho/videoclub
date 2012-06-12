@@ -1,0 +1,17 @@
+@import "bootstrap-variables";
+@import "scss/bootstrap";
+
+body {
+  padding-top: $navbarHeight + 40px;
+  padding-bottom: 40px;
+}
+
+.page-header {
+  a.btn {
+    float: right;
+  }
+
+  a.btn + a.btn {
+    margin-right: 8px;
+  }
+}
