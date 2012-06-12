@@ -9,7 +9,7 @@
 group = Group.create! :name => 'admin', :description => 'Usuario con todos los privilegios sobre la pagina'
 group = Group.create! :name => 'base', :description => 'Usuario base, no tiene ningun tipo de bonificacion'
 
-User.new(:name => 'admin',:email => 'admin@admin.com', :password => 'salpica', :password_confirmation => 'salpica').save
+User.new(:username => 'admin',:email => 'admin@admin.com', :password => 'salpica', :password_confirmation => 'salpica').save
 
 user = User.first
 user.groups << Group.find_by_name('admin')

@@ -10,7 +10,7 @@ class AdminUserIsRequired < StandardError; end
 
   protected
     def is_admin
-      unless user_signed_in? and current_user.group.admin?
+      unless user_signed_in? and current_user.groups.find_by_name('admin')
         raise AdminUserIsRequired
       end
     end
