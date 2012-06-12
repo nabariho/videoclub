@@ -1,4 +1,10 @@
 class User < ActiveRecord::Base
+  
+  has_many :suscriptions
+  has_many :groups, :through => :suscriptions
+
+  before_create :asigna_grupo_defecto
+
   attr_accessor :login
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -19,5 +25,8 @@ class User < ActiveRecord::Base
       where(conditions).first
     end
   end
+ def asigna_grupo_defecto
+	self.groups << Group.find_by_name('base')
+ end
 end
 
