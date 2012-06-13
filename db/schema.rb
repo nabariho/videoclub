@@ -39,11 +39,6 @@ ActiveRecord::Schema.define(:version => 20120612162851) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "groups_users", :id => false, :force => true do |t|
-    t.integer "user_id"
-    t.integer "group_id"
-  end
-
   create_table "models", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
