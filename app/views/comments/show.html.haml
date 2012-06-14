@@ -1,0 +1,12 @@
+.page-header
+  = link_to comments_path, :class => 'btn' do
+    %i.icon-list-alt
+    Back
+  = link_to edit_comment_path(@comment), :class => 'btn btn-primary' do
+    %i.icon-pencil.icon-white
+    Edit
+  %h1 Listing comments
+
+%dl
+  %dt Comentario:
+  %dd= @comment.comentario

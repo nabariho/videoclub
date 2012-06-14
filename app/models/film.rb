@@ -1,4 +1,6 @@
 class Film < ActiveRecord::Base
+  has_many :comments
+
   attr_accessible :buy_price, :rental_price, :sinopsis, :time, :title, :poster, :movie, :year
   has_attached_file :poster #, :styles => { :medium => "214x317>", :thumb => "107x159>" }
   has_attached_file :movie
