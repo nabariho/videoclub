@@ -14,6 +14,7 @@ class AdminUserIsRequired < StandardError; end
         raise AdminUserIsRequired
       end
     end
+
 end
 
 

@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120612162851) do
+ActiveRecord::Schema.define(:version => 20120613180415) do
+
+  create_table "cards", :force => true do |t|
+    t.integer  "n_cuenta"
+    t.datetime "fecha"
+    t.integer  "secure_code"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "user_id"
+  end
 
   create_table "films", :force => true do |t|
     t.string   "title"
@@ -61,6 +70,15 @@ ActiveRecord::Schema.define(:version => 20120612162851) do
 
   add_index "models", ["email"], :name => "index_models_on_email", :unique => true
   add_index "models", ["reset_password_token"], :name => "index_models_on_reset_password_token", :unique => true
+
+  create_table "paypals", :force => true do |t|
+    t.string   "username"
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "user_id"
+  end
 
   create_table "suscriptions", :force => true do |t|
     t.integer  "user_id"

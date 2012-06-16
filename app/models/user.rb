@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+
+  has_many :cards
   
   has_many :suscriptions
   has_many :groups, :through => :suscriptions
