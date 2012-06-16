@@ -2,7 +2,6 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :suscriptions
   has_many :groups, :through => :suscriptions
-
   before_create :asigna_grupo_defecto
 
   attr_accessor :login

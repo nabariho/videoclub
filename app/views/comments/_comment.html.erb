@@ -1,0 +1,5 @@
+<%=form_for @film.comments do |f| %>
+  <%= f.label :comentario %>
+  <%= f.text_area :comentario %><br />
+  <%= f.submit "Comentar" %>
+<% end %>

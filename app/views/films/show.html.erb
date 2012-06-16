@@ -16,7 +16,16 @@
     <%= @film.title %>
   </h1>
   <p><%= video_tag @film.movie.url, :size => "520x400", :controls => true  %></p>
-  <div class="row Comments"> Aquí van los comentarios!!! </div>
+  <div class="row Comments">
+      <% @film.comments.each do |c| %>
+        <% if c.film_id %>
+          <div class="content">
+            <%=c.comentario %>
+          </div>
+        <%end%>
+      <% end %>
+      <%= render "comments/comment" %>
+  </div>
 </div>
 
 <div id="GetMovie">
@@ -37,8 +46,6 @@
     <button class="btn btn-large btn-danger btnPurchase">Ver con Anuncios</button>
     Gratis
   </div> -->
-
-</div>
 
 </div>
 <!-- <div>
