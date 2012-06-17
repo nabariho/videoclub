@@ -1,4 +1,4 @@
-= form_for ([@film, @comment]) do |f|
+= form_for ([@comment.film, @comment]) do |f|
   -if @comment.errors.any?
     .alert.alert-error
       %a.close{:href => "#", :"data-dismiss" => "alert"} ×

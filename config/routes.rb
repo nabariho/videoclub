@@ -7,9 +7,11 @@ Videoclub::Application.routes.draw do
    root :to =>"home#index"
    devise_for :users
    resources :users, :only => [:show, :index]
-   resources :films
-   resources :groups	
-   resources :comments
+   resources :films do
+        resources :comments
+   end
+   resources :groups
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
