@@ -1,0 +1,27 @@
+.page-header
+  = link_to new_rent_path, :class => 'btn btn-primary' do
+    %i.icon-plus.icon-white
+    New Rent
+  %h1 Listing rents
+
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %th User
+      %th Film
+      %th Start date
+      %th End date
+      %th
+      %th
+      %th
+
+  %tbody
+    - @rents.each do |rent|
+      %tr
+        %td= rent.user_id
+        %td= rent.film_id
+        %td= rent.start_date
+        %td= rent.end_date
+        %td= link_to 'Show', rent
+        %td= link_to 'Edit', edit_rent_path(rent)
+        %td= link_to 'Destroy', rent, :confirm => 'Are you sure?', :method => :delete

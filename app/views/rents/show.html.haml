@@ -1,0 +1,18 @@
+.page-header
+  = link_to rents_path, :class => 'btn' do
+    %i.icon-list-alt
+    Back
+  = link_to edit_rent_path(@rent), :class => 'btn btn-primary' do
+    %i.icon-pencil.icon-white
+    Edit
+  %h1 Listing rents
+
+%dl
+  %dt User:
+  %dd= @rent.user_id
+  %dt Film:
+  %dd= @rent.film_id
+  %dt Start date:
+  %dd= @rent.start_date
+  %dt End date:
+  %dd= @rent.end_date
