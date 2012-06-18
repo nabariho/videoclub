@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   before_filter :is_user, :except =>[:new, :create]
 
   # GET /comments/new
@@ -24,7 +23,6 @@ class CommentsController < ApplicationController
     @film = Film.find(params[:film_id])
     @comment = @film.comments.create(params[:comment])
     @comment.user = current_user
-    #@comment.film = @film
     @comment.save
 
     respond_to do |format|
@@ -57,10 +55,11 @@ class CommentsController < ApplicationController
   # DELETE /comments/1.json
   def destroy
     @comment = Comment.find(params[:id])
+    @film = @comment.film
     @comment.destroy
 
     respond_to do |format|
-      format.html { redirect_to @comment.film }
+      format.html { redirect_to @film }
       format.json { head :no_content }
     end
   end

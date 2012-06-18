@@ -1,15 +1,18 @@
 Videoclub::Application.routes.draw do
 
+   match "mycomments" => "users#mycomments"
+
    authenticated :user do
       root :to =>"home#index"
    end
 
    root :to =>"home#index"
    devise_for :users
-   resources :users, :only => [:show, :index]
+   resources :users, :only => [:show, :index, :mycomments]
    resources :films do
         resources :comments
    end
+
    resources :groups
 
   # The priority is based upon order of creation:
