@@ -15,4 +15,10 @@ user = User.first
 user.groups << Group.find_by_name('admin')
 user.save
 
+User.new(:username => 'nabar',:email => 'nabariho@gmail.com', :password => 'salpica', :password_confirmation => 'salpica').save
+
+user = User.last
+user.groups << Group.find_by_name('base')
+user.save
+
 

@@ -2,8 +2,18 @@
   <div id="myCarousel" class="carousel slide">
   <!-- Carousel items -->
     <div class="carousel-inner">
-      <div class="active item"><%=image_tag("robot_edit_reg.png")%></div>
-      <div class="item"><%=image_tag("robot_reg.png")%></div>
+       <div class="active item">
+                <%=link_to @films.first do%>
+			<%= image_tag @films.first.poster.url, :size => "320x200" %>
+                <%end%>
+       </div>
+       <% @films.each do |film| %>
+          <div class="item">
+		<%=link_to film do%>
+			<%= image_tag film.poster.url, :size => "320x200" %>
+                <%end%>
+          </div>
+          <% end %>
     </div>
     <!-- Carousel nav -->
     <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>

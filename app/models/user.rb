@@ -1,14 +1,15 @@
 class User < ActiveRecord::Base
 
-  has_many :cards
+  has_many :cards, :dependent => :destroy  
   
-  has_many :suscriptions
+  has_many :suscriptions,:dependent => :destroy  
   has_many :groups, :through => :suscriptions
 
   before_create :asigna_grupo_defecto
 
   attr_accessor :login
-  # Include default devise modules. Others available are:
+  validates_presence_of :username
+  validates_uniqueness_of :username
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

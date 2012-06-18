@@ -8,7 +8,7 @@ Videoclub::Application.routes.draw do
 
    root :to =>"home#index"
    devise_for :users
-   resources :users, :only => [:show, :index]
+   resources :users, :only => [:show, :index,:destroy]
    resources :films
    resources :groups
    resources :paypals
