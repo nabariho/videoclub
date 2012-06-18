@@ -1,24 +1,33 @@
-<div id="carru">
-  <div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-       <div class="active item">
-                <%=link_to @films.first do%>
-			<%= image_tag @films.first.poster.url, :size => "320x200" %>
-                <%end%>
-       </div>
-       <% @films.each do |film| %>
-          <div class="item">
-		<%=link_to film do%>
-			<%= image_tag film.poster.url, :size => "320x200" %>
-                <%end%>
-          </div>
-          <% end %>
-    </div>
-    <!-- Carousel nav -->
-    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-  </div>
-</div>
-<script>$('#myCarousel').carousel({ interval: 1200 })</script>
+<div id="ca-container" class="ca-container">
+    <div class="ca-wrapper">
+    <%@films.each do |film|%>
+        <div class="ca-item ca-item-1">
+            <div class="ca-item-main">
+                <div class="ca-icon">
+                    <%= link_to film do%>
+                         <%=image_tag film.poster.url, :size => "320x240"%>
+                    <%end%>
 
+                </div>
+                <h3>Stop factory farming</h3>
+                    <a href="#" class="ca-more">more...</a>
+            </div>
+            <div class="ca-content-wrapper">
+                <div class="ca-content">
+                    <h6>Animals are not commodities</h6>
+                    <a href="#" class="ca-close">close</a>
+                    <div class="ca-content-text">
+                        <p>Some more text...</p>
+                    </div>
+                    <ul>
+                        <li><a href="#">Read more</a></li>
+                        <li><a href="#">Share this</a></li>
+                        <li><a href="#">Become a member</a></li>
+                        <li><a href="#">Donate</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+       <%end%>
+       </div><!-- ca-wrapper -->
+</div><!-- ca-container -->
