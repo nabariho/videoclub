@@ -16,7 +16,7 @@
     <%= @film.title %>
   </h1>
   <p><%= video_tag @film.movie.url, :size => "520x400", :controls => true  %></p>
-  <div class="row Comments">
+  <div class="comments">
       <%= render "comments/comment" %>
       <%if current_user %>
         <%= render "comments/form" %>

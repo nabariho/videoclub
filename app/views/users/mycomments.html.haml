@@ -1,20 +1,24 @@
 .page-header
   %h1 Mis Comentarios
 
-%table.table.table-bordered.table-striped
+%table.tabla
   %thead
     %tr
-      %th Peĺicula
+      %th.first Peĺicula
       %th Comentario
       %th
       %th
       %th
-
   %tbody
     - current_user.comments.each do |c|
       %tr
-        %td= link_to c.film.title, c.film
-        %td= c.comentario
-        %td= link_to 'Ver', c.film
-        %td= link_to 'Editar', edit_film_comment_path(c.film,c)
-        %td= link_to 'Eliminar', film_comment_path(c.film,c), confirm: '¿Seguro?', method: :delete
+        %td.title-film
+          = link_to c.film.title, c.film
+        %td
+          = c.comentario
+        %td.link
+          = link_to 'Ver', c.film, :class => "btn btm-mini btn-blue"
+        %td.link
+          = link_to 'Editar', edit_film_comment_path(c.film,c), :class => "btn btm-mini btn-blue"
+        %td.link
+          = link_to 'Eliminar', film_comment_path(c.film,c), confirm: '¿Seguro?', method: :delete, :class => "btn btm-mini btn-blue"

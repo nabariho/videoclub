@@ -1,5 +1,36 @@
 .content{
-border-radius: 5px;
-background-color: green;
+  border-bottom: 2px solid black;
+  padding-top: 5px;
+  padding-bottom: 8px;
+}
 
+.area-comment{
+  height: 60px;
+  width: 500px;
+  border-radius: 5px;
+}
+
+.tabla{
+  color: white;
+  border: 1px solid black;
+  width: 100%;
+  border-collapse:collapse;
+  @include linear-gradient(top, #333, #222);
+  a{
+    color: white;
+  }
+  td, tr{
+    border: 1px solid black;
+    .first{
+      border-right: 1px solid black;
+      width:25%;
+    }
+    .link{
+      border-left: 0px;
+      border-right: 0px;
+    }
+    .title-film{
+      text-align: center;
+    }
+  }
 }

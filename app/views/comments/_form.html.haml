@@ -9,8 +9,8 @@
           %li= msg
 
   .control-group
-    = f.label :comentario, :class => 'control-label'
+    = f.label :comentario, :style => 'color: white; margin-top: 10px'
     .controls
-      = f.text_area :comentario, :class => 'input-xxlarge'
+      = f.text_area :comentario, :class => 'area-comment', :maxlength => 140
   .actions
-    = f.submit :class => 'btn btn-primary'
+    = f.submit "Crear Comentario", :class => 'btn btn-blue'

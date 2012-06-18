@@ -1,11 +1,11 @@
 <% @film.comments.each do |c| %>
    <% if c.user %>
       <div class="content">
-         <span><%=c.user.username %></span>
+         <h6><%=c.user.username %></h6>
          <%=c.comentario %>
             <% if user_signed_in? and (c.user == current_user or current_user.groups.find_by_name('admin')) %>
-               <%= link_to 'Editar', edit_film_comment_path(@film, c), :class => "btn btn-info" %>
-               <%= link_to 'Eliminar', film_comment_path(@film, c), confirm: '¿Seguro?', method: :delete, :class => "btn btn-danger"%>
+               <%= link_to 'Editar', edit_film_comment_path(@film, c), :class => "btn btn-mini btn-blue" %>
+               <%= link_to 'Eliminar', film_comment_path(@film, c), confirm: '¿Seguro?', method: :delete, :class => "btn btn-mini btn-blue"%>
             <%end%>
       </div>
    <%end%>
