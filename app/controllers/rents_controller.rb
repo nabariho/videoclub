@@ -1,9 +1,15 @@
 class RentsController < ApplicationController
-  before_filter :is_user, :except =>[:new, :create]
+  before_filter :authenticate_user!
+  before_filter :is_admin, :only => [:index, :destroy]
+  before_filter :is_user,  :except =>[:new, :create, :index]
 
   # GET /rents.json
   def index
-    @rents = Rent.all
+    if params[:film_id]
+      @rents=Film.find(params[:film_id]).rents
+    else
+      @rents = Rent.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,9 +47,11 @@ class RentsController < ApplicationController
   # POST /rents
   # POST /rents.json
   def create
-    @film = Film.find(params[:id])
-    @rent = @film.rents.create(params[:rent])
+    @film = Film.find(params[:film_id])
+    @rent = @film.rents.create()
     @rent.user_id = current_user.id
+    @rent.start_date = Time.current()
+    @rent.end_date = Time.current() + 3.days
     @rent.save
 
     respond_to do |format|
@@ -80,13 +88,13 @@ class RentsController < ApplicationController
     @rent.destroy
 
     respond_to do |format|
-      format.html { redirect_to rents_url }
+      format.html { redirect_to rents_path }
       format.json { head :no_content }
     end
   end
 
   def is_user
-    unless user_signed_in? and ((current_user == Rent.find(params[:id]).user) or current_user.groups.find_by_name('admin'))
+    unless current_user.groups.find_by_name('admin')  or (current_user == Rent.find(params[:id]).user)
        raise AdminUserIsRequired
     end
   end
