@@ -1,6 +1,6 @@
 class Rent < ActiveRecord::Base
   belongs_to :user
-  belongs_to :film
+  has_one     :film
 
   attr_accessible :end_date, :film_id, :start_date, :user_id
 
