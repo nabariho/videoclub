@@ -1,5 +1,6 @@
 class RentsController < ApplicationController
-  # GET /rents
+  before_filter :is_user, :except =>[:new, :create]
+
   # GET /rents.json
   def index
     @rents = Rent.all
@@ -81,6 +82,12 @@ class RentsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to rents_url }
       format.json { head :no_content }
+    end
+  end
+
+  def is_user
+    unless user_signed_in? and ((current_user == Rent.find(params[:id]).user) or current_user.groups.find_by_name('admin'))
+       raise AdminUserIsRequired
     end
   end
 end

@@ -1,0 +1,18 @@
+<h1>Mis comentarios</h1>
+
+<table>
+  <tr>
+    <th>Comentario</th>
+    <th>Película</th>
+    <th></th>
+  </tr>
+
+<% @user.comments.each do |c| %>
+  <tr>
+    <td><%= c.comentario %></td>
+    <td><%= c.film.title %></td>
+    <td><%= link_to 'Show', c.film %></td>
+  </tr>
+<% end %>
+</table>
+<br />

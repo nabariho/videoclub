@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 <div class="span3" id="MovieInfo">
   <div class="ImageContainer"><%= image_tag @film.poster.url %></div>
-  <div class="informacion" id="TableInfoMovie">  
+  <div class="informacion" id="TableInfoMovie">
     <ul>
       <li> Año: <%= @film.year %></li>
       <li> Duración: <%= @film.time %> minutos</li>
@@ -17,14 +17,10 @@
   </h1>
   <p><%= video_tag @film.movie.url, :size => "520x400", :controls => true  %></p>
   <div class="row Comments">
-      <% @film.comments.each do |c| %>
-        <% if c.film_id %>
-          <div class="content">
-            <%=c.comentario %>
-          </div>
-        <%end%>
-      <% end %>
       <%= render "comments/comment" %>
+      <%if current_user %>
+        <%= render "comments/form" %>
+      <%end%>
   </div>
 </div>
 
@@ -35,7 +31,9 @@
 
   </div> -->
   <button class="btn btn-large btn-danger btnPurchase">Comprar: <%= @film.buy_price %>€</button>
-  <button class="btn btn-large btn-danger btnPurchase">Alquilar: <%= @film.rental_price %>€</button>
+  <%= link_to new_film_rent_path(@film) do%>
+     <button class="btn btn-large btn-danger btnPurchase">Alquilar: <%= @film.rental_price %>€</button>
+  <%end%>
   <button class="btn btn-large btn-danger btnPurchase">Ver con Anuncios: Gratis</button>
 
   <!-- <div class= "colorGrey">

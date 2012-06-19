@@ -1,7 +1,5 @@
 .page-header
-  = link_to new_rent_path, :class => 'btn btn-primary' do
-    %i.icon-plus.icon-white
-    New Rent
+
   %h1 Listing rents
 
 %table.table.table-bordered.table-striped
@@ -22,6 +20,5 @@
         %td= rent.film_id
         %td= rent.start_date
         %td= rent.end_date
-        %td= link_to 'Show', rent
-        %td= link_to 'Edit', edit_rent_path(rent)
-        %td= link_to 'Destroy', rent, :confirm => 'Are you sure?', :method => :delete
+        %td= link_to 'Edit', edit_film_rent_path(rent.film_id, rent.id)
+        %td= link_to 'Destroy', film_rent_path(rent.film_id, rent.id), :confirm => 'Are you sure?', :method => :delete
