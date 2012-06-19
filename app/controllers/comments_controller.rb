@@ -1,5 +1,16 @@
 class CommentsController < ApplicationController
-  before_filter :is_user, :except =>[:new, :create]
+  before_filter :is_admin, :only =>[:index]
+  before_filter :is_user, :except =>[:new, :create, :is_user]
+
+  def index
+    @film = Film.find(params[:film_id])
+    @comments = @film.comments
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @comment }
+    end
+  end
 
   # GET /comments/new
   # GET /comments/new.json
@@ -21,9 +32,8 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @film = Film.find(params[:film_id])
-    @comment = @film.comments.create()
+    @comment = @film.comments.create(params[:comment])
     @comment.user = current_user
-    @comment.start_date = "1/1/1987"
     @comment.save
 
     respond_to do |format|

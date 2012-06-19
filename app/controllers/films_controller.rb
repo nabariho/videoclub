@@ -1,5 +1,5 @@
 class FilmsController < ApplicationController
-  before_filter :is_admin, :except => [:show]
+  before_filter :is_admin, :except => [:show, :finder, :result]
   # GET /films
   # GET /films.json
   def index
@@ -83,5 +83,13 @@ class FilmsController < ApplicationController
       format.html { redirect_to films_url }
       format.json { head :no_content }
     end
+  end
+  def finder
+     @search = Film.search(params[:search])
+
+     respond_to do |format|
+         format.html # result.html.erb
+         format.xml  { render :xml => @noticias }
+     end
   end
 end

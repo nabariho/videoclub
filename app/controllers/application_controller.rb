@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
-
+protect_from_forgery
 class AdminUserIsRequired < StandardError; end
 
   rescue_from AdminUserIsRequired do |exception|
@@ -14,6 +13,8 @@ class AdminUserIsRequired < StandardError; end
         raise AdminUserIsRequired
       end
     end
+
+
 end
 
 

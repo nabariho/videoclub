@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  n_cuenta: 1
+  fecha: 
+  secure_code: 1
+
+two:
+  n_cuenta: 1
+  fecha: 
+  secure_code: 1

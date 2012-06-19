@@ -13,6 +13,15 @@
 
 ActiveRecord::Schema.define(:version => 20120618173020) do
 
+  create_table "cards", :force => true do |t|
+    t.integer  "n_cuenta"
+    t.datetime "fecha"
+    t.integer  "secure_code"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "user_id"
+  end
+
   create_table "comments", :force => true do |t|
     t.string   "comentario"
     t.integer  "film_id"

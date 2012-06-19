@@ -1,12 +1,11 @@
 .page-header
-  = link_to new_comment_path, :class => 'btn btn-primary' do
-    %i.icon-plus.icon-white
-    New Comment
+
   %h1 Listing comments
 
 %table.table.table-bordered.table-striped
   %thead
     %tr
+      %th Pelicula
       %th Comentario
       %th
       %th
@@ -15,7 +14,8 @@
   %tbody
     - @comments.each do |comment|
       %tr
+        %td= link_to comment.film.title, comment.film
         %td= comment.comentario
-        %td= link_to 'Show', comment
+        %td= link_to 'Show', comment.film
         %td= link_to 'Edit', edit_comment_path(comment)
         %td= link_to 'Destroy', comment, :confirm => 'Are you sure?', :method => :delete

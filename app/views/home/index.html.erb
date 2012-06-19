@@ -1,14 +1,49 @@
-<div id="carru">
-  <div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-      <div class="active item"><%=image_tag("robot_edit_reg.png")%></div>
-      <div class="item"><%=image_tag("robot_reg.png")%></div>
-    </div>
-    <!-- Carousel nav -->
-    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-  </div>
-</div>
-<script>$('#myCarousel').carousel({ interval: 1200 })</script>
+<div id="ca-container" class="ca-container">
+    <div class="ca-wrapper">
+    <%@films.each do |film|%>
+        <div class="ca-item ca-item-1">
+            <div class="ca-item-main">
+                <div class="ca-icon">
+                    <%= link_to film do%>
+                         <%=image_tag film.poster.url, :size => "320x240"%>
+                    <%end%>
+                <span class="ca-quote">“</span>
+                </div>
+                   <a href="#" class="ca-more">more...</a>
+            </div>
+            <div class="ca-content-wrapper">
+                <div class="ca-content">
+                    <h6>SINOPSIS</h6>
+                    <a href="#" class="ca-close">close</a>
+                    <div class="ca-content-text">
+                        <p><%=film.sinopsis%></p>
+                    </div>
+                    <ul>
+                        <li><a href="#">Alquilar</a></li>
+                        <li><a href="#">Comprar</a></li>
 
+                    </ul>
+                </div>
+            </div>
+        </div>
+       <%end%>
+       </div><!-- ca-wrapper -->
+     </div><!-- ca-container -->
+
+
+     <script type="text/javascript">
+
+            $('#ca-container').contentcarousel({
+    			// speed for the sliding animation
+    			sliderSpeed     : 500,
+    			// easing for the sliding animation
+    			sliderEasing    : 'easeOutExpo',
+    			// speed for the item animation (open / close)
+    			itemSpeed       : 500,
+    			// easing for the item animation (open / close)
+    			itemEasing      : 'easeOutExpo',
+    			// number of items to scroll at a time
+    			scroll          : 1
+});
+
+    </script>

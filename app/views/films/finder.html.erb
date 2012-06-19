@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th>Titulo</th>
+    <th>Sinopsis</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<%@search.each do |r|%>
+<tr>
+    <td><%= r.title %></td>
+    <td><%= r.sinopsis %></td>
+</tr>
+
+<%end%>
+
+</table>
+
+

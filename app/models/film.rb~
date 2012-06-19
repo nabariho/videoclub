@@ -13,4 +13,16 @@ class Film < ActiveRecord::Base
   validates_uniqueness_of :title
   validates :time, :numericality => { :only_integer => true, :greater_than => 0 }
   validates :year, :numericality => { :only_integer => true, :greater_than => 1800, :less_than => 2099 }
+
+
+
+   def self.search(search)
+	  if search
+             find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+          else
+             find(:all)
+          end
+   end
+
+
 end

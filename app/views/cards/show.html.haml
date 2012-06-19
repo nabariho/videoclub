@@ -1,0 +1,16 @@
+.page-header
+  = link_to edit_user_registration_path, :class => 'btn' do
+    %i.icon-list-alt
+    Back
+  = link_to edit_card_path(@card), :class => 'btn btn-primary' do
+    %i.icon-pencil.icon-white
+    Edit
+  %h1 Listing cards
+
+%dl
+  %dt N cuenta:
+  %dd= @card.n_cuenta
+  %dt Fecha:
+  %dd= @card.fecha
+  %dt Secure code:
+  %dd= @card.secure_code

@@ -1,0 +1,24 @@
+= form_for @card do |f|
+  -if @card.errors.any?
+    .alert.alert-error
+      %a.close{:href => "#", :"data-dismiss" => "alert"} ×
+      %h4= "#{pluralize(@card.errors.count, "error")} prohibited this card from being saved:"
+
+      %ul
+        - @card.errors.full_messages.each do |msg|
+          %li= msg
+
+  .control-group
+    = f.label :n_cuenta, :class => 'control-label'
+    .controls
+      = f.number_field :n_cuenta, :class => 'input-xxlarge'
+  .control-group
+    = f.label :fecha, :class => 'control-label'
+    .controls
+      = f.text_field :fecha, :class => 'input-xxlarge'
+  .control-group
+    = f.label :secure_code, :class => 'control-label'
+    .controls
+      = f.number_field :secure_code, :class => 'input-xxlarge'
+  .actions
+    = f.submit :class => 'btn btn-primary'
