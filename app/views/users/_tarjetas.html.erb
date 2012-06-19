@@ -1,6 +1,6 @@
 <h1>Mis tarjetas de crédito</h1>
 
-<table>
+<table class="tabla" style="width: 100%">
   <tr>
     <th>Nº de tarjeta</th>
     <th>Fecha de caducidad</th>
@@ -15,13 +15,13 @@
     <td><%= card.n_cuenta %></td>
     <td><%= card.fecha %></td>
     <td><%= card.secure_code %></td>
-    <td><%= link_to 'Show', card %></td>
-    <td><%= link_to 'Edit', edit_card_path(card) %></td>
-    <td><%= link_to 'Destroy', card, confirm: 'Are you sure?', method: :delete %></td>
+    <td class="btn-tabla"><%= link_to 'Show', card, :class => "btn btn-mini btn-blue"%></td>
+    <td class="btn-tabla"><%= link_to 'Edit', edit_card_path(card), :class => "btn btn-mini btn-blue" %></td>
+    <td class="btn-tabla"><%= link_to 'Destroy', card, confirm: 'Are you sure?', method: :delete, :class => "btn btn-mini btn-blue" %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Card>', new_card_path %>
+<%= link_to 'New Card', new_card_path, :class => "btn btn-mini btn-blue" %>
