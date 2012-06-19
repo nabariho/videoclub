@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :is_admin, :except => [:mycomments]
+  before_filter :is_admin, :except => [:mycomments, :myrents]
   def index
       @users = User.all
   end

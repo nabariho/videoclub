@@ -12,7 +12,7 @@ Videoclub::Application.routes.draw do
 
    resources :films do
       resources :comments
-      resources :rents :only => [:index, :create, :new]
+      resources :rents, :only => [:index, :create, :new]
    end
 
    resources :rents, :except => [:create, :new]

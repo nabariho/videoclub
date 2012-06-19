@@ -1,0 +1,15 @@
+.page-header
+  %h1 Mis Alquileres
+
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %th Peĺicula
+      %th Fecha de Inicio
+      %th Fecha de Final
+  %tbody
+    - current_user.rents.each do |r|
+      %tr
+        %td= link_to r.film.title, r.film
+        %td= r.start_date
+        %td= r.end_date

@@ -1,5 +1,6 @@
 Videoclub::Application.routes.draw do
    match "mycomments" => "users#mycomments"
+   match "myrents" => "users#myrents"
 
    authenticated :user do
       root :to =>"home#index"
