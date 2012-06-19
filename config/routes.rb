@@ -1,6 +1,5 @@
 Videoclub::Application.routes.draw do
-
-  
+   match "search" => "films#finder"
 
    authenticated :user do
       root :to =>"home#index"
@@ -13,7 +12,6 @@ Videoclub::Application.routes.draw do
    resources :groups
    resources :paypals
    resources :cards	
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

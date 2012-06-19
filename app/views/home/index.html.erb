@@ -7,23 +7,21 @@
                     <%= link_to film do%>
                          <%=image_tag film.poster.url, :size => "320x240"%>
                     <%end%>
-
+                <span class="ca-quote">“</span>
                 </div>
-                <h3>Stop factory farming</h3>
-                    <a href="#" class="ca-more">more...</a>
+                   <a href="#" class="ca-more">more...</a>
             </div>
             <div class="ca-content-wrapper">
                 <div class="ca-content">
-                    <h6>Animals are not commodities</h6>
+                    <h6>SINOPSIS</h6>
                     <a href="#" class="ca-close">close</a>
                     <div class="ca-content-text">
-                        <p>Some more text...</p>
+                        <p><%=film.sinopsis%></p>
                     </div>
                     <ul>
-                        <li><a href="#">Read more</a></li>
-                        <li><a href="#">Share this</a></li>
-                        <li><a href="#">Become a member</a></li>
-                        <li><a href="#">Donate</a></li>
+                        <li><a href="#">Alquilar</a></li>
+                        <li><a href="#">Comprar</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -31,8 +29,21 @@
        <%end%>
        </div><!-- ca-wrapper -->
      </div><!-- ca-container -->
+
+
      <script type="text/javascript">
 
-            $('#ca-container').contentcarousel();
+            $('#ca-container').contentcarousel({
+    			// speed for the sliding animation
+    			sliderSpeed     : 500,
+    			// easing for the sliding animation
+    			sliderEasing    : 'easeOutExpo',
+    			// speed for the item animation (open / close)
+    			itemSpeed       : 500,
+    			// easing for the item animation (open / close)
+    			itemEasing      : 'easeOutExpo',
+    			// number of items to scroll at a time
+    			scroll          : 1
+});
 
     </script>
