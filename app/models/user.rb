@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :comments
   has_many :rents
+  has_many :films, :through => :rents
   has_many :cards, :dependent => :destroy
   has_many :suscriptions, :dependent => :destroy
   has_many :groups, :through => :suscriptions

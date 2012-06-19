@@ -9,12 +9,10 @@
 
 <%@search.each do |r|%>
 <tr>
-    <td><%= r.title %></td>
+    <td><%= link_to r.title, r %></td>
     <td><%= r.sinopsis %></td>
 </tr>
 
 <%end%>
 
 </table>
-
-
