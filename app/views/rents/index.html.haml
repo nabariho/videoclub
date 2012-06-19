@@ -1,0 +1,24 @@
+.page-header
+
+  %h1 Listing rents
+
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %th User
+      %th Film
+      %th Start date
+      %th End date
+      %th
+      %th
+      %th
+
+  %tbody
+    - @rents.each do |rent|
+      %tr
+        %td= rent.user_id
+        %td= rent.film_id
+        %td= rent.start_date
+        %td= rent.end_date
+        %td= link_to 'Edit', edit_rent_path(rent.id)
+        %td= link_to 'Destroy', rent_path(rent), :confirm => 'Are you sure?', :method => :delete

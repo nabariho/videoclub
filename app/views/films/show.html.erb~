@@ -17,7 +17,7 @@
   </h1>
   <p><%= video_tag @film.movie.url, :size => "520x400", :controls => true  %></p>
   <div class="row Comments">
-      <%= render "comments/comments" %>
+      <%= render "comments/comment" %>
       <%if current_user %>
         <%= render "comments/form" %>
       <%end%>
@@ -31,7 +31,10 @@
 
   </div> -->
   <button class="btn btn-large btn-danger btnPurchase">Comprar: <%= @film.buy_price %>€</button>
-  <button class="btn btn-large btn-danger btnPurchase">Alquilar: <%= @film.rental_price %>€</button>
+  <%= form_for ([@film, @rent]) do |f| %>
+      <%= f.submit :class => 'btn btn-large btn-danger btnPurchase', :value => "Alquilar: "+@film.rental_price.to_s+"€"%>
+  <%end%>
+
   <button class="btn btn-large btn-danger btnPurchase">Ver con Anuncios: Gratis</button>
 
   <!-- <div class= "colorGrey">

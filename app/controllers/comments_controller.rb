@@ -21,8 +21,9 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @film = Film.find(params[:film_id])
-    @comment = @film.comments.create(params[:comment])
+    @comment = @film.comments.create()
     @comment.user = current_user
+    @comment.start_date = "1/1/1987"
     @comment.save
 
     respond_to do |format|
@@ -65,7 +66,7 @@ class CommentsController < ApplicationController
   end
 
   def is_user
-    unless user_signed_in? and ((current_user == Comment.find(params[:id]).user) or current_user.groups.find_by_name('admin'))
+    unless user_signed_in? and (current_user.groups.find_by_name('admin') or (current_user == Comment.find(params[:id]).user) )
        raise AdminUserIsRequired
     end
   end

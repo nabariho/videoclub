@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120613165351) do
+ActiveRecord::Schema.define(:version => 20120618173020) do
 
   create_table "comments", :force => true do |t|
     t.string   "comentario"
@@ -45,6 +45,15 @@ ActiveRecord::Schema.define(:version => 20120613165351) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "rents", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "film_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "suscriptions", :force => true do |t|

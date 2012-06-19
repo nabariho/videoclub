@@ -17,6 +17,7 @@ class FilmsController < ApplicationController
     @film = Film.find(params[:id])
     if @film
         @comment = @film.comments.build
+        @rent = @film.rents.build
     end
     respond_to do |format|
       format.html # show.html.erb

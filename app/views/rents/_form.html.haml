@@ -1,0 +1,28 @@
+= form_for @rent do |f|
+  -if @rent.errors.any?
+    .alert.alert-error
+      %a.close{:href => "#", :"data-dismiss" => "alert"} ×
+      %h4= "#{pluralize(@rent.errors.count, "error")} prohibited this rent from being saved:"
+
+      %ul
+        - @rent.errors.full_messages.each do |msg|
+          %li= msg
+
+  .control-group
+    = f.label :user_id, :class => 'control-label'
+    .controls
+      = f.number_field :user_id, :class => 'input-xxlarge'
+  .control-group
+    = f.label :film_id, :class => 'control-label'
+    .controls
+      = f.number_field :film_id, :class => 'input-xxlarge'
+  .control-group
+    = f.label :start_date, :class => 'control-label'
+    .controls
+      = f.datetime_select :start_date, :class => 'input-xxlarge'
+  .control-group
+    = f.label :end_date, :class => 'control-label'
+    .controls
+      = f.datetime_select :end_date, :class => 'input-xxlarge'
+  .actions
+    = f.submit :class => 'btn btn-primary'
