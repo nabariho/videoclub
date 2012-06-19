@@ -5,3 +5,23 @@ float: right;
        border-radius: 4px;
        background-color:Grey;
 }
+
+.tabla{
+  @include linear-gradient(top, #333, #222);
+  color: white;
+  text-align: center;
+  border-collapse:collapse;
+  border: 1px solid black;
+  width: 80%;
+  tr, td{
+    border: 1px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    .btn-tabla{
+      border-right: 0px;
+      border-left: 0px;
+      width:6%;
+    }
+  }
+
+}
