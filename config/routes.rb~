@@ -3,6 +3,8 @@ Videoclub::Application.routes.draw do
    match "myrents" => "users#myrents"
    match "search" => "films#finder"
 
+  resources :commercials
+
    authenticated :user do
       root :to =>"home#index"
    end

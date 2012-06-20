@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(:version => 20120620123354) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "commercials", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+  end
+
   create_table "films", :force => true do |t|
     t.string   "title"
     t.integer  "time"

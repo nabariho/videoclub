@@ -7,6 +7,8 @@ class RentsController < ApplicationController
   def index
     if params[:film_id]
       @rents=Film.find(params[:film_id]).rents
+    elsif params[:user_id]
+      @rents=User.find(params[:user_id]).rents
     else
       @rents = Rent.all
     end
@@ -125,5 +127,5 @@ class RentsController < ApplicationController
        raise AdminUserIsRequired
     end
   end
-  
+
 end

@@ -1,5 +1,7 @@
 <% if user_signed_in? and current_user.groups.find_by_name('admin') %>
       <%= link_to "Gestion Usuarios",users_path,class: "btn btn-large btn-primary" %>
       <%= link_to "Gestion Peliculas",films_path,class: "btn btn-large btn-primary" %>
+      <%= link_to "Gestion Commercials",commercials_path,class: "btn btn-large btn-primary" %>
+      <%= link_to "Gestion Rents",rents_path,class: "btn btn-large btn-primary" %>
    </div>
 <% end %>
