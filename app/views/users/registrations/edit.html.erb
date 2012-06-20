@@ -31,10 +31,10 @@
 <%= link_to "Back", :back %>
 
 </div>
-
-<%=link_to "Mis Comentarios", mycomments_path, :class=>"btn btn-info" %>
-<%=link_to "Mis Alquileres", myrents_path, :class=>"btn btn-info" %>
-
-<div class="span8"><%=render '/users/tarjetas'%></div>
+<div class="span8">
+  <%=link_to "Mis Comentarios", mycomments_path, :class=>"btn btn-info" %>
+  <%=link_to "Mis Alquileres", myrents_path, :class=>"btn btn-info" %>
+  <%=render '/users/tarjetas'%>
+</div>
 
 </div>
