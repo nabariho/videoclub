@@ -1,1 +1,2 @@
-<p><%= video_tag @film.movie.url, :size => "520x400", :controls => true, :class =>'anuncio'  %></p>dd
+<p><%= video_tag @film.movie.url, :size => "520x400", :controls => true, :id =>'anuncio'  %></p>
+<button onclick="document.getElementById('anuncio').play()">play()</button>
