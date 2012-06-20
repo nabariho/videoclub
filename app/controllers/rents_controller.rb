@@ -48,12 +48,39 @@ class RentsController < ApplicationController
   # POST /rents.json
   def create
     @film = Film.find(params[:film_id])
-    @rent = @film.rents.create()
-    @rent.user_id = current_user.id
-    @rent.start_date = Time.current()
-    @rent.end_date = Time.current() + 3.days
+    if current_user.cards.empty?
+      redirect_to @film, :notice => 'No tiene tarjetas registradas' and return
+    end
+    @rent = @film.rents.find_by_user_id(current_user.id)
+    if @rent #existe
+      if params[:commit].include?("Alquila") #se desea alquilar
+         if @rent.rent #era un alquiler
+           @rent.start_date = Time.current()
+           @rent.end_date = @rent.end_date + 3.days
+           @rent.rent=true
+         else #era una compra. NO puede alquilarse
+            redirect_to @film, :notice => 'Pelicula ya comprada' and return
+         end
+      else #Se desea comprar
+         if @rent.rent #era un alquiler
+            @rent.start_date = Time.current()
+            @rent.rent=false
+         else #Era una compra
+            redirect_to @film, :notice => 'Ya la tiene comprada' and return
+         end
+      end
+    else #no existe
+      @rent= @film.rents.create()
+      @rent.user_id = current_user.id
+      @rent.start_date = Time.current()
+      if params[:commit].include?("Alquila")
+        @rent.end_date = Time.current() + 3.days
+        @rent.rent=true
+      else
+        @rent.rent=false
+      end
+    end
     @rent.save
-
     respond_to do |format|
       if @rent.save
         format.html { redirect_to @film, notice: 'Rent was successfully created.' }

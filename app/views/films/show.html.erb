@@ -30,7 +30,9 @@
     <button class="btn btn-large btn-danger btnPurchase">Comprar: <%= @film.buy_price %>€</button>
 
   </div> -->
-  <button class="btn btn-large btn-danger btnPurchase">Comprar: <%= @film.buy_price %>€</button>
+  <%= form_for ([@film, @rent]) do |f| %>
+      <%= f.submit :class => 'btn btn-large btn-danger btnPurchase', :value => "Comprar: "+@film.buy_price.to_s+"€"%>
+  <%end%>
   <%= form_for ([@film, @rent]) do |f| %>
       <%= f.submit :class => 'btn btn-large btn-danger btnPurchase', :value => "Alquilar: "+@film.rental_price.to_s+"€"%>
   <%end%>

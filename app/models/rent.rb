@@ -4,5 +4,5 @@ class Rent < ActiveRecord::Base
 
   attr_accessible :end_date, :film_id, :start_date, :user_id
 
-  validates_presence_of :end_date, :film_id, :start_date, :user_id
+  validates_presence_of :film_id, :start_date, :user_id
 end

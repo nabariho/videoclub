@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120618173020) do
+ActiveRecord::Schema.define(:version => 20120620123354) do
 
   create_table "cards", :force => true do |t|
     t.integer  "n_cuenta"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20120618173020) do
     t.datetime "end_date"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.boolean  "rent"
   end
 
   create_table "suscriptions", :force => true do |t|

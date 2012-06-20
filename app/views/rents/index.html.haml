@@ -9,7 +9,7 @@
       %th Film
       %th Start date
       %th End date
-      %th
+      %th Buy or Rent
       %th
       %th
 
@@ -20,5 +20,6 @@
         %td= rent.film_id
         %td= rent.start_date
         %td= rent.end_date
+        %td= rent.rent?
         %td= link_to 'Edit', edit_rent_path(rent.id)
         %td= link_to 'Destroy', rent_path(rent), :confirm => 'Are you sure?', :method => :delete

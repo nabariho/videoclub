@@ -17,7 +17,7 @@ Videoclub::Application.routes.draw do
       resources :rents, :only => [:index, :create, :new]
    end
 
-   resources :comments, :only => [:edit]
+   resources :comments, :only => [:edit, :destroy]
    resources :rents, :except => [:create, :new]
    resources :groups
 
