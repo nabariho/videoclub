@@ -19,17 +19,17 @@
        <%f=current_user.rents.find_by_film_id(@film)%>
        <% if f.end_date %>
             <%if f.end_date >= Time.current() %>
-		<%render 'film_sin_anuncios'%>
+		<%render '/films/film_sin_anuncios'%>
             <%else%>
-		<%render 'film_con_anuncios'%>
+		<%render '/films/film_con_anuncios'%>
             <%end%>
                 
 		
 	<%else%>
- 		<%render 'film_sin_anuncios'%>
+ 		<%render '/films/film_sin_anuncios'%>
        <%end%>
   <%else%>
-       <%render 'film_con_anuncios'%>
+       <%render '/films/film_con_anuncios'%>
   <%end%>
   
   <div class="comments">
