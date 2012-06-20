@@ -15,7 +15,21 @@
   <h1 id="titulo_pelicula">
     <%= @film.title %>
   </h1>
-  <p><%= video_tag @film.movie.url, :size => "520x400", :controls => true  %></p>
+  <% if current_user and current_user.films.include?(@film) %>
+       <% f=current_user.rents.find_by_film_id(@film)%>
+       <% if f.rent %>
+            <%if f.end_date >= Time.current() %>
+		         <%=render '/films/film_sin_anuncios'%>
+            <%else%>
+		         <%=render '/films/film_con_anuncion'%>
+            <%end%>
+	   <%else%>
+ 		   <%=render 'film_sin_anuncios'%>
+      <%end%>
+  <%else%>
+      <%=render '/films/film_con_anuncion'%>
+  <%end%>
+
   <div class="comments">
       <%= render "comments/comment" %>
       <%if current_user %>
@@ -25,27 +39,20 @@
 </div>
 
 <div id="GetMovie">
-
-  <!-- <div class= "colorGrey">
-    <button class="btn btn-large btn-danger btnPurchase">Comprar: <%= @film.buy_price %>€</button>
-
-  </div> -->
-  <%= form_for ([@film, @rent]) do |f| %>
-      <%= f.submit :class => 'btn btn-large btn-danger btnPurchase', :value => "Comprar: "+@film.buy_price.to_s+"€"%>
+  <%if current_user and current_user.films.include?(@film) %>
+  <% f=current_user.rents.find_by_film_id(@film)%>
+       <%if f.rent%>
+            <%if f.end_date >= Time.current() %>
+		         <%=render 'alquilada'%>
+            <%else%>
+		         <%=render 'sincomprar'%>
+            <%end%>
+	   <%else%>
+ 		   <%=render 'comprada'%>
+      <%end%>
+  <%else%>
+      <%=render 'sincomprar'%>
   <%end%>
-  <%= form_for ([@film, @rent]) do |f| %>
-      <%= f.submit :class => 'btn btn-large btn-danger btnPurchase', :value => "Alquilar: "+@film.rental_price.to_s+"€"%>
-  <%end%>
-  <button class="btn btn-large btn-danger btnPurchase">Ver con Anuncios: Gratis</button>
-
-  <!-- <div class= "colorGrey">
-    <span><button class="btn btn-large btn-danger btnPurchase">Alquilar</button></span>
-    <span><%= @film.rental_price %>€</span>
-  </div> -->
-  <!-- <div class= "colorGrey">
-    <button class="btn btn-large btn-danger btnPurchase">Ver con Anuncios</button>
-    Gratis
-  </div> -->
 
 </div>
 <!-- <div>

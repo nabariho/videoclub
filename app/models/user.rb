@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
   has_many :films, :through => :rents
   has_many :cards, :dependent => :destroy
   has_many :suscriptions, :dependent => :destroy
-
   has_many :groups, :through => :suscriptions
   before_create :asigna_grupo_defecto
 
