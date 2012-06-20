@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120616133819) do
+ActiveRecord::Schema.define(:version => 20120620123354) do
+
+  create_table "cards", :force => true do |t|
+    t.integer  "n_cuenta"
+    t.datetime "fecha"
+    t.integer  "secure_code"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "user_id"
+  end
+
+  create_table "comments", :force => true do |t|
+    t.string   "comentario"
+    t.integer  "film_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "commercials", :force => true do |t|
     t.string   "name"
@@ -47,6 +64,16 @@ ActiveRecord::Schema.define(:version => 20120616133819) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "rents", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "film_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.boolean  "rent"
   end
 
   create_table "suscriptions", :force => true do |t|

@@ -1,4 +1,5 @@
 class CommercialsController < ApplicationController
+  before_filter :is_admin
   # GET /commercials
   # GET /commercials.json
   def index
