@@ -98,4 +98,5 @@ class RentsController < ApplicationController
        raise AdminUserIsRequired
     end
   end
+  
 end

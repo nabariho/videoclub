@@ -14,8 +14,24 @@
 <div class="span7" id="MovieContainer">
   <h1 id="titulo_pelicula">
     <%= @film.title %>
-  </h1>
-  <p><%= video_tag @film.movie.url, :size => "520x400", :controls => true  %></p>
+  </h1> 
+  <% if current_user and current_user.films.include?(@film) %>
+       <%f=current_user.rents.find_by_film_id(@film)%>
+       <% if f.end_date %>
+            <%if f.end_date >= Time.current() %>
+		<%render '/films/film_sin_anuncios'%>
+            <%else%>
+		<%render '/films/film_con_anuncios'%>
+            <%end%>
+                
+		
+	<%else%>
+ 		<%render '/films/film_sin_anuncios'%>
+       <%end%>
+  <%else%>
+       <%render '/films/film_con_anuncios'%>
+  <%end%>
+  
   <div class="comments">
       <%= render "comments/comment" %>
       <%if current_user %>
@@ -31,7 +47,7 @@
 
   </div> -->
   <button class="btn btn-large btn-danger btnPurchase">Comprar: <%= @film.buy_price %>€</button>
-  <%= form_for ([@film, @rent]) do |f| %>
+  <%= form_for ([@film, @rents]) do |f| %>
       <%= f.submit :class => 'btn btn-large btn-danger btnPurchase', :value => "Alquilar: "+@film.rental_price.to_s+"€"%>
   <%end%>
   <button class="btn btn-large btn-danger btnPurchase">Ver con Anuncios: Gratis</button>
