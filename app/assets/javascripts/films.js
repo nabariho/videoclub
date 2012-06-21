@@ -8,10 +8,8 @@ var startingTime;
 
 function switchVideo() {
   v.pause();
-  clearInterval(interval);
   v.style.display = 'none';
   a.style.display = 'block';
-  spotTime = 4000;
   a.src = Commercials[i].value;
   //a.load();
   // a.currentTime = 0.01;
@@ -28,7 +26,8 @@ function aEnded(){
   //En este caso volvemos al video anterior por donde ibamos
   v.style.display = 'block';
   a.style.display = 'none';
-  vPlay();
+  spotTime = 4000;
+  v.play();
   i++;
   i = i%NumElem;
 }
