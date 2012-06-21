@@ -5,18 +5,13 @@
    <input type="text" class="Commercials" style="display:none;" value=<%= c.file.url %> />
 <% end %>
 <script type="text/javascript">
-   Commercials = document.getElementsByClassName("Commercials");
-   NumElem=Commercials.length;
-   v=document.getElementById("pelicula");
-   a=document.getElementById("anuncio");
+  Commercials = document.getElementsByClassName("Commercials");
+  NumElem = Commercials.length;
+  v = document.getElementById("pelicula");
+  a = document.getElementById("anuncio");
 
-   v.addEventListener('play', function() {interval = window.setTimeout(function() {switchVideo()}, spotTime);}
-                   , false);
-   a.addEventListener('pause', function() {();}
-                   , false);
-   a.addEventListener('ended', function() {finAnuncio();}
-                   , false);
-   v.addEventListener('ended', function() {clearInterval(interval);}
-                   , false);
-
+  v.addEventListener('play',  vPlay,  false);
+  v.addEventListener('pause',  vPause,  false);
+  a.addEventListener('ended', aEnded, false);
+  v.addEventListener('ended', vEnded, false);
 </script>
