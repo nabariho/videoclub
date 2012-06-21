@@ -4,9 +4,9 @@ class CommentsController < ApplicationController
 
   def index
     if params[:film_id]
-      @comments=Film.find(params[:film_id]).rents
+      @comments=Film.find(params[:film_id]).comments
     elsif params[:user_id]
-      @comments=User.find(params[:user_id]).rents
+      @comments=User.find(params[:user_id]).comments
     else
       @comments = Comment.all
     end

@@ -1,10 +1,14 @@
 .page-header
+  = link_to edit_user_registration_path, :class => 'btn btn-primary' do
+    %i.icon-plus.icon-white
+    Back
+
   %h1 Mis Comentarios
 
 %table.tabla
   %thead
     %tr
-      %th.first Peĺicula
+      %th.first Película
       %th Comentario
       %th
       %th
@@ -19,6 +23,6 @@
         %td.link
           = link_to 'Ver', c.film, :class => "btn btm-mini btn-blue"
         %td.link
-          = link_to 'Editar', edit_film_comment_path(c.film,c), :class => "btn btm-mini btn-blue"
+          = link_to 'Editar', edit_comment_path(c), :class => "btn btm-mini btn-blue"
         %td.link
-          = link_to 'Eliminar', film_comment_path(c.film,c), confirm: '¿Seguro?', method: :delete, :class => "btn btm-mini btn-blue"
+          = link_to 'Eliminar', comment_path(c), confirm: '¿Seguro?', method: :delete, :class => "btn btm-mini btn-blue"

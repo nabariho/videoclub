@@ -20,6 +20,9 @@
         %td= rent.film.title
         %td= time_tag rent.start_date
         %td= time_tag rent.end_date
-        %td= rent.rent?
-        %td.btn-tabla= link_to 'Edit', edit_rent_path(rent.id), :class => 'btn btn-mini btn-blue'
-        %td.btn-tabla= link_to 'Destroy', rent_path(rent), :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-mini btn-blue'
+        - if rent.rent
+          %td Alquiler
+        -else
+          %td Compra
+        %td.btn-tabla= link_to 'Editar', edit_rent_path(rent.id), :class => 'btn btn-mini btn-blue'
+        %td.btn-tabla= link_to 'Eliminar', rent_path(rent), :confirm => '¿Seguro que deseas eliminarlo?', :method => :delete, :class => 'btn btn-mini btn-blue'

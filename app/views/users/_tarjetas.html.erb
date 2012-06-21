@@ -13,7 +13,7 @@
 <% @user.cards.each do |card| %>
   <tr>
     <td><%= card.n_cuenta %></td>
-    <td><%= card.fecha %></td>
+    <td><%= time_tag card.fecha %></td>
     <td><%= card.secure_code %></td>
     <td class="btn-tabla"><%= link_to 'Show', card, :class => "btn btn-mini btn-blue"%></td>
     <td class="btn-tabla"><%= link_to 'Edit', edit_card_path(card), :class => "btn btn-mini btn-blue" %></td>

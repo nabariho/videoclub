@@ -2,13 +2,13 @@
   = link_to new_commercial_path, :class => 'btn btn-primary' do
     %i.icon-plus.icon-white
     New Commercial
-  %h1 Listing commercials
+  %h1 Lista de Anuncios
 
 %table.tabla
   %thead
     %tr
-      %th Name
-      %th File
+      %th Nombre
+      %th Archivo
       %th
       %th
 
@@ -17,5 +17,5 @@
       %tr
         %td= commercial.name
         %td= video_tag commercial.file.url, :size => "260x200", :controls => true
-        %td.btn-tabla= link_to 'Edit', edit_commercial_path(commercial), :class => "btn btn-mini btn-blue"
-        %td.btn-tabla= link_to 'Destroy', commercial, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-mini btn-blue"
+        %td.btn-tabla= link_to 'Editar', edit_commercial_path(commercial), :class => "btn btn-mini btn-blue"
+        %td.btn-tabla= link_to 'Eliminar', commercial, :confirm => '¿Seguro que deseas eliminarlo?', :method => :delete, :class => "btn btn-mini btn-blue"

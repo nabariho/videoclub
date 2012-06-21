@@ -1,11 +1,11 @@
 .page-header
-  = link_to root_path, :class => 'btn btn-primary' do
+  = link_to edit_user_registration_path, :class => 'btn btn-primary' do
     %i.icon-plus.icon-white
     Back
 
   %h1 Mis Alquileres
 
-%table.table.table-bordered.table-striped
+%table.tabla
   %thead
     %tr
       %th Peĺicula
@@ -15,5 +15,5 @@
     - current_user.rents.each do |r|
       %tr
         %td= link_to r.film.title, r.film
-        %td= r.start_date
-        %td= r.end_date
+        %td= time_tag r.start_date
+        %td= time_tag r.end_date

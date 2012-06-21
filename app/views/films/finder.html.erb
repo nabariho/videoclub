@@ -1,11 +1,13 @@
 <table class="tabla" style="margin-top: 20px; width: 100%">
   <tr>
+    <th>Poster</th>
     <th>Titulo</th>
     <th>Sinopsis</th>
   </tr>
 
 <%@search.each do |r|%>
   <tr>
+    <td><%= image_tag r.poster.url, :size => "70x40"%></td>
     <td><%= link_to r.title, r %></td>
     <td><%= r.sinopsis %></td>
   </tr>

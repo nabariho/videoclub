@@ -1,5 +1,11 @@
-<h1>Gestión de Películas</h1>
+<div class="page-header">
+<%= link_to new_film_path, :class => 'btn btn-primary' do %>
+    <i class="icon-plus icon-white"></i>
+    Añadir Película
+<%end%>
 
+<h1>Gestión de Películas</h1>
+</div>
 <table class="tabla" style="width: 100%">
   <tr>
     <th>Título</th>
