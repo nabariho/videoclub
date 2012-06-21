@@ -1,2 +1,14 @@
-<p><%= video_tag @film.movie.url, :size => "520x400", :controls => true, :id =>'anuncio'  %></p>
-<button onclick="document.getElementById('anuncio').play()">play()</button>
+<p><%= video_tag @film.movie.url, :size => "520x400", :controls => true, :id =>'anuncio' %></p>
+<input type="text" id="FilmOrigin" style="display:none;" value=<%= @film.movie.url %> />
+<% Commercial.all.each do |c| %>
+<input type="text" id="Commercials" style="display:none;" value=<%= c.file.url %> />
+<% end %>
+<script type="text/javascript">
+   FilmOrigin=document.getElementById("FilmOrigin").value;
+   AdOrigin=document.getElementById("Commercials").value;
+   v=document.getElementById("anuncio");
+   v.addEventListener('play', function() {interval = window.setTimeout(function() {switchVideo()}, 4000);}
+                   , false);
+   v.addEventListener('ended', function() {finAnuncio();}
+                   , false);
+</script>
