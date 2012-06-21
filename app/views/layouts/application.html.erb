@@ -1,49 +1,47 @@
 <html>
-<!DOCTYPE html>
-<head>
-  <title>Videoclub</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<div class ="container">
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container-fluid">
-        <div id="logotipo">
-          <%= image_tag("logo3.png") %>
-	  <%=link_to root_path do%>
-              <%= image_tag("logo.png") %>
-          <% end %>
-        </div>
-       <%= form_tag search_path, :method => 'get',:class => "navbar-search" do %>
-                  <%=text_field_tag :search, params[:search],:class=> "search-query",:placeholder=>"Buscar Peliculas"%>
-       <%end%>
-        <ul id="login">  
-    		  <%=render 'users/menu/login_items'%>
-		  <%=render 'users/menu/registration_items'%>
-        </ul>
-        <%= render 'users/menu/user_name' %>
+  <!DOCTYPE html>
+  <head>
+    <title>Videoclub</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class ="container">
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container-fluid">
+            <div id="logotipo">
+              <%= image_tag("logo3.png") %>
+              <%=link_to root_path do%>
+                <%= image_tag("logo.png") %>
+              <% end %>
+            </div>
+            <%= form_tag search_path, :method => 'get',:class => "navbar-search" do %>
+              <%=text_field_tag :search, params[:search],:class=> "search-query",:placeholder=>"Buscar Peliculas"%>
+            <%end%>
+            <ul id="login">  
+              <%=render 'users/menu/login_items'%>
+              <%=render 'users/menu/registration_items'%>
+            </ul>
+            <%= render 'users/menu/user_name' %>
+          </div>
+        </div>		
       </div>
-    </div>		
-  </div>
-  <div id="cuerpo">
-    <%=render 'users/menu/admin_menu' %>
-    <%= yield %>   
-  </div>
-  <div class="navbar navbar-fixed-bottom">
-    <div class="navbar-inner">
-      <div class="container-fluid">
-        <ul id="nav_pie" class="nav" >
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Blog</a></li>
-        </ul>
+        <%=render 'users/menu/admin_menu' %>
+        <%= yield %>   
+      <div class="navbar navbar-fixed-bottom">
+        <div class="navbar-inner">
+          <div class="container-fluid">
+            <ul id="nav_pie" class="nav" >
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-</body>
+  </body>
 </html>
