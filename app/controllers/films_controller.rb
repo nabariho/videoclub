@@ -15,6 +15,8 @@ class FilmsController < ApplicationController
   # GET /films/1.json
   def show
     @film = Film.find(params[:id])
+    @commercials = Commercial.all(:order => 'RANDOM()') #, :limit => 2)
+
     if @film
         @comment = @film.comments.build
         @rent = @film.rents.build

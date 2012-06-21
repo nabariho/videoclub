@@ -3,6 +3,8 @@ Videoclub::Application.routes.draw do
    match "myrents" => "users#myrents"
    match "search" => "films#finder"
 
+  resources :commercials
+
    authenticated :user do
       root :to =>"home#index"
    end
@@ -10,7 +12,9 @@ Videoclub::Application.routes.draw do
    root :to =>"home#index"
    devise_for :users
 
-   resources :users, :only => [:show, :index, :destroy]
+   resources :users, :only => [:show, :index, :destroy] do
+      resources :rents, :only => [:index]
+   end
 
    resources :films do
       resources :comments

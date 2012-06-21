@@ -1,9 +1,21 @@
-<p><%= video_tag @film.movie.url, :size => "520x400", :controls => true, :id =>"anuncio",:value => @commercial.movie.url %></p>
-
+<p><%= video_tag @film.movie.url, :size => "520x400", :controls => true, :id =>'pelicula' %></p>
+<p><%= video_tag @film.movie.url, :size => "520x400", :controls => true, :id =>'anuncio' %></p>
+<input type="text" id="FilmOrigin" style="display:none;" value=<%= @film.movie.url %> />
+<% @commercials.each do |c| %>
+   <input type="text" class="Commercials" style="display:none;" value=<%= c.file.url %> />
+<% end %>
+<button id="fullscreen" onclick="toggleFullScreen()">FullScreen</button>
 <script type="text/javascript">
- var v = document.getElementById("anuncio");
- var a = document.getElementById("anuncio").value;
- document.write('esto es una prueba');
- v.load();
- v.play();
+   Commercials = document.getElementsByClassName("Commercials");
+   NumElem=Commercials.length;
+   v=document.getElementById("pelicula");
+   a=document.getElementById("anuncio");
+
+   v.addEventListener('play', function() {interval = window.setTimeout(function() {switchVideo()}, 4000);}
+                   , false);
+   a.addEventListener('ended', function() {finAnuncio();}
+                   , false);
+   v.addEventListener('ended', function() {clearInterval(interval);}
+                   , false);
+
 </script>

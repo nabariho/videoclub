@@ -1,6 +1,6 @@
 <h1>Listing films</h1>
 
-<table>
+<table class="tabla" style="width: 100%">
   <tr>
     <th>Title</th>
     <th>Year</th>
@@ -8,6 +8,7 @@
     <th>Rental price</th>
     <th>Buy price</th>
     <th>Sinopsis</th>
+    <th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -21,13 +22,14 @@
     <td><%= film.rental_price %></td>
     <td><%= film.buy_price %></td>
     <td><%= film.sinopsis %></td>
-    <td><%= link_to 'Show', film %></td>
-    <td><%= link_to 'Edit', edit_film_path(film) %></td>
-    <td><%= link_to 'Destroy', film_comment(c), confirm: 'Are you sure?', method: :delete %></td>
+    <td class="btn-tabla"><%= link_to 'Rents', film_rents_path(film.id), :class => "btn btn-mini btn-blue" %></td>
+    <td class="btn-tabla"><%= link_to 'Show', film, :class => "btn btn-mini btn-blue" %></td>
+    <td class="btn-tabla"><%= link_to 'Edit', edit_film_path(film), :class => "btn btn-mini btn-blue" %></td>
+    <td class="btn-tabla"><%= link_to 'Destroy', film, confirm: 'Are you sure?', method: :delete, :class => "btn btn-mini btn-blue" %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Film', new_film_path %>
+<%= link_to 'New Film', new_film_path, :class => "btn btn-mini btn-blue" %>
