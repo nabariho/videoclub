@@ -1,33 +1,23 @@
-var AdOrigin;
-var FilmTime;
-var FilmOrigin;
-var EnAnuncio = new Boolean(false);
+var NumElem;
+var i=0;
+var Commercials;
+//var EnAnuncio = new Boolean(false);
 
 function switchVideo(){
-if (EnAnuncio==false){
-  FilmTime = v.currentTime;
-  v.src=AdOrigin;
-  v.curentSrc=AdOrigin;
-  v.load();
-  v.play();
-  EnAnuncio=true;
-}
+  a.style.display = 'block';
+  v.pause();
+  v.style.display = 'none';
+
+  a.src=Commercials[i].value;
+  a.load();
+  a.play();
 }
 
 function finAnuncio(){
-//Comprobamos si estaba reproduciendo un anuncio
-if (EnAnuncio){
    //En este caso volvemos al video anterior por donde ibamos
-   v.currentSrc = FilmOrigin;
-   v.src = FilmOrigin;
-   //v.load();
-   v.currentTime= 10;
-   document.write(v.currentTime)
+   v.style.display = 'block';
+   a.style.display = 'none';
    v.play();
-   EnAnuncio=false;
-}
-else{
-   return;
-}
-
+   i++;
+   i=i%NumElem;
 }
