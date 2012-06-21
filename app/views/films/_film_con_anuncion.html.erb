@@ -10,7 +10,9 @@
    v=document.getElementById("pelicula");
    a=document.getElementById("anuncio");
 
-   v.addEventListener('play', function() {interval = window.setTimeout(function() {switchVideo()}, 4000);}
+   v.addEventListener('play', function() {interval = window.setTimeout(function() {switchVideo()}, spotTime);}
+                   , false);
+   a.addEventListener('pause', function() {();}
                    , false);
    a.addEventListener('ended', function() {finAnuncio();}
                    , false);

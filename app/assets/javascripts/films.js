@@ -4,10 +4,11 @@ var Commercials;
 //var EnAnuncio = new Boolean(false);
 
 function switchVideo(){
-  a.style.display = 'block';
   v.pause();
   v.style.display = 'none';
-
+  a.style.display = 'block';
+  var interval; 
+  spotTime = 240000;
   a.src=Commercials[i].value;
   a.load();
   a.play();
@@ -20,4 +21,9 @@ function finAnuncio(){
    v.play();
    i++;
    i=i%NumElem;
+}
+function paraArranca(){
+  parada = interval;
+  clearInterval(interval);
+  spotTime = spotTime - parada;
 }
