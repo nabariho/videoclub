@@ -1,1 +1,9 @@
-<p><%= video_tag @film.movie.url, :size => "520x400", :controls => true, :class =>'anuncio'  %></p>
+<p><%= video_tag @film.movie.url, :size => "520x400", :controls => true, :id =>"anuncio",:value => @commercial.movie.url %></p>
+
+<script type="text/javascript">
+ var v = document.getElementById("anuncio");
+ var a = document.getElementById("anuncio").value;
+ document.write('esto es una prueba');
+ v.load();
+ v.play();
+</script>
