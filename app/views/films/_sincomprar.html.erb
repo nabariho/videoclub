@@ -6,5 +6,5 @@
     <%= f.submit :class => 'btn btn-large btn-danger btnPurchase', :style => "width: 140px", :value => "Alquilar: "+@film.rental_price.to_s+"€"%>
   <%end%>
 <% else %>
-   <p>Logueate para alquilar o comprar la película</p>
+   <p class="alquilado comprado">Logueate para alquilar o comprar la película</p>
 <% end %>

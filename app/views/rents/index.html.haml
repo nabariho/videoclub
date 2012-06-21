@@ -1,25 +1,25 @@
 .page-header
 
-  %h1 Listing rents
+  %h1 Gestión Alquileres/Compras
 
 %table.tabla
   %thead
     %tr
-      %th User
-      %th Film
-      %th Start date
-      %th End date
-      %th Buy or Rent
+      %th Usuario
+      %th Película
+      %th Fecha Inicial
+      %th Fecha de Fin
+      %th Tipo
       %th
       %th
 
   %tbody
     - @rents.each do |rent|
       %tr
-        %td= rent.user_id
-        %td= rent.film_id
-        %td= rent.start_date
-        %td= rent.end_date
+        %td= rent.user.username
+        %td= rent.film.title
+        %td= time_tag rent.start_date
+        %td= time_tag rent.end_date
         %td= rent.rent?
         %td.btn-tabla= link_to 'Edit', edit_rent_path(rent.id), :class => 'btn btn-mini btn-blue'
         %td.btn-tabla= link_to 'Destroy', rent_path(rent), :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-mini btn-blue'

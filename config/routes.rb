@@ -12,8 +12,9 @@ Videoclub::Application.routes.draw do
    root :to =>"home#index"
    devise_for :users
 
-   resources :users, :only => [:show, :index, :destroy] do
+   resources :users, :only => [:index, :destroy] do
       resources :rents, :only => [:index]
+      resources :comments, :only => [:index]
    end
 
    resources :films do

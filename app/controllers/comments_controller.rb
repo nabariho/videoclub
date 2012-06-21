@@ -3,8 +3,13 @@ class CommentsController < ApplicationController
   before_filter :is_user, :except =>[:new, :create, :is_user]
 
   def index
-    @film = Film.find(params[:film_id])
-    @comments = @film.comments
+    if params[:film_id]
+      @comments=Film.find(params[:film_id]).rents
+    elsif params[:user_id]
+      @comments=User.find(params[:user_id]).rents
+    else
+      @comments = Comment.all
+    end
 
     respond_to do |format|
       format.html # new.html.erb

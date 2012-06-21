@@ -1,10 +1,9 @@
 <p><%= video_tag @film.movie.url, :size => "520x400", :controls => true, :id =>'pelicula' %></p>
-<p><%= video_tag @film.movie.url, :size => "520x400", :controls => true, :id =>'anuncio' %></p>
+<p><%= video_tag @film.movie.url, :size => "520x400", :controls => false, :id =>'anuncio' %></p>
 <input type="text" id="FilmOrigin" style="display:none;" value=<%= @film.movie.url %> />
 <% @commercials.each do |c| %>
    <input type="text" class="Commercials" style="display:none;" value=<%= c.file.url %> />
 <% end %>
-<button id="fullscreen" onclick="toggleFullScreen()">FullScreen</button>
 <script type="text/javascript">
    Commercials = document.getElementsByClassName("Commercials");
    NumElem=Commercials.length;

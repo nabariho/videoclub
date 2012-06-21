@@ -1,5 +1,5 @@
 <div class="row">
-<p id="notice"><%= notice %></p>
+<p id="notice" class="alquilado"><%= notice %></p>
 <div class="span3" id="MovieInfo">
   <div class="ImageContainer"><%= image_tag @film.poster.url %></div>
   <div class="informacion" id="TableInfoMovie">
@@ -19,7 +19,6 @@
        <% f=current_user.rents.find_by_film_id(@film)%>
        <% if f.rent %>
             <%if f.end_date >= Time.current() %>
-               <p>SALPICA</p>
 		         <%=render '/films/film_sin_anuncios'%>
             <%else%>
 		         <%=render '/films/film_con_anuncion'%>
