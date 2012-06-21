@@ -1,4 +1,4 @@
 <%= form_for ([@film, @rent]) do |f| %>
-   <%= f.submit :class => 'btn btn-large btn-danger btnPurchase', :value => "Comprar: "+@film.buy_price.to_s+"€"%>
+  <%= f.submit :class => 'btn btn-large btn-danger btnPurchase', :style => "width: 140px", :value => "Comprar: "+@film.buy_price.to_s+"€"%>
 <%end%>
-<p>Alquilada hasta: <%=time_tag @film.rents.find_by_user_id(current_user.id).end_date %></p>
+<p class="alquilado">Alquilada hasta: <%=time_tag @film.rents.find_by_user_id(current_user.id).end_date %></p>

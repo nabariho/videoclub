@@ -21,8 +21,9 @@ if (EnAnuncio){
    v.currentSrc = FilmOrigin;
    v.src = FilmOrigin;
    //v.load();
-   v.play();
    v.currentTime= 10;
+   document.write(v.currentTime)
+   v.play();
    EnAnuncio=false;
 }
 else{

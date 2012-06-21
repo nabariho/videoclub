@@ -61,7 +61,8 @@ img{
 .btnPurchase{
 	height:55px;
 	width:140px;
-	margin:8px;
+	margin-top: 8px;
+        margin-left: 8px;
 }
 
 .Comments {
@@ -87,4 +88,14 @@ p.button {
   margin-right: 6px;
   padding-right: 18px; /* sliding doors padding */
   text-decoration: none;
+}
+
+.alquilado{
+  margin-left: 4px;
+  margin-right: 4px;
+  color: white;
+  text-align: center;
+}
+.comprado{
+  margin-top: 4px;
 }

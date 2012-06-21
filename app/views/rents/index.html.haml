@@ -2,7 +2,7 @@
 
   %h1 Listing rents
 
-%table.table.table-bordered.table-striped
+%table.tabla
   %thead
     %tr
       %th User
@@ -21,5 +21,5 @@
         %td= rent.start_date
         %td= rent.end_date
         %td= rent.rent?
-        %td= link_to 'Edit', edit_rent_path(rent.id)
-        %td= link_to 'Destroy', rent_path(rent), :confirm => 'Are you sure?', :method => :delete
+        %td.btn-tabla= link_to 'Edit', edit_rent_path(rent.id), :class => 'btn btn-mini btn-blue'
+        %td.btn-tabla= link_to 'Destroy', rent_path(rent), :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-mini btn-blue'
