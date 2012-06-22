@@ -15,13 +15,13 @@
     <td><%= card.n_cuenta %></td>
     <td><%= time_tag card.fecha %></td>
     <td><%= card.secure_code %></td>
-    <td class="btn-tabla"><%= link_to 'Show', card, :class => "btn btn-mini btn-blue"%></td>
-    <td class="btn-tabla"><%= link_to 'Edit', edit_card_path(card), :class => "btn btn-mini btn-blue" %></td>
-    <td class="btn-tabla"><%= link_to 'Destroy', card, confirm: 'Are you sure?', method: :delete, :class => "btn btn-mini btn-blue" %></td>
+    <td class="btn-tabla"><%= link_to 'Mostrar', card, :class => "btn btn-mini btn-blue"%></td>
+    <td class="btn-tabla"><%= link_to 'Editar', edit_card_path(card), :class => "btn btn-mini btn-blue" %></td>
+    <td class="btn-tabla"><%= link_to 'Eliminar', card, confirm: '¿Eliminar datos de la tarjeta?', method: :delete, :class => "btn btn-mini btn-blue" %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Card', new_card_path, :class => "btn btn-mini btn-blue" %>
+<%= link_to 'Añadir Tarjeta', new_card_path, :class => "btn btn-mini btn-blue" %>
